@@ -13,46 +13,44 @@ class MangaCard extends StatelessWidget {
     required this.onTap,
   });
 
+  String _formatViews(String? viewsStr) {
+    if (viewsStr == null || viewsStr.isEmpty) return '0';
+    final views = int.tryParse(viewsStr) ?? 0;
+    if (views >= 1000000) {
+      return '${(views / 1000000).toStringAsFixed(1).replaceAll('.0', '')}M';
+    } else if (views >= 1000) {
+      return '${(views / 1000).toStringAsFixed(1).replaceAll('.0', '')}K';
+    }
+    return views.toString();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final latestChapter = manga.chaptersLatest?.isNotEmpty == true 
+        ? manga.chaptersLatest!.first.chapterName ?? '0'
+        : '0';
+
     return GestureDetector(
       onTap: onTap,
       child: Card(
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        color: const Color(0xFF1E2124), // Dark background for the card
+        elevation: 2,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  CachedNetworkImage(
-                    imageUrl: manga.coverUrl,
-                    fit: BoxFit.cover,
-                    placeholder: (context, url) => Shimmer.fromColors(
-                      baseColor: Colors.grey[300]!,
-                      highlightColor: Colors.grey[100]!,
-                      child: Container(color: Colors.white),
-                    ),
-                    errorWidget: (context, url, error) => const Icon(Icons.error),
-                  ),
-                  Positioned(
-                    bottom: 8,
-                    left: 8,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                      decoration: BoxDecoration(
-                        color: Colors.black54,
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: Text(
-                        '${manga.chapterCount} chương',
-                        style: const TextStyle(color: Colors.white, fontSize: 10),
-                      ),
-                    ),
-                  ),
-                ],
+              child: CachedNetworkImage(
+                imageUrl: manga.thumbUrl,
+                fit: BoxFit.cover,
+                width: double.infinity,
+                placeholder: (context, url) => Shimmer.fromColors(
+                  baseColor: Colors.grey[800]!,
+                  highlightColor: Colors.grey[600]!,
+                  child: Container(color: Colors.white),
+                ),
+                errorWidget: (context, url, error) => const Icon(Icons.error, color: Colors.grey),
               ),
             ),
             Padding(
@@ -61,15 +59,34 @@ class MangaCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    manga.title,
+                    manga.name,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold, 
+                      fontSize: 13,
+                      color: Colors.white,
+                    ),
                   ),
-                  const SizedBox(height: 4),
-                  Text(
-                    manga.lastUpdate,
-                    style: TextStyle(color: Colors.grey[600], fontSize: 11),
+                  const SizedBox(height: 8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Chap. $latestChapter',
+                        style: TextStyle(color: Colors.grey[400], fontSize: 11),
+                      ),
+                      Row(
+                        children: [
+                          const Icon(Icons.remove_red_eye, color: Colors.amber, size: 12),
+                          const SizedBox(width: 4),
+                          Text(
+                            _formatViews(manga.views),
+                            style: TextStyle(color: Colors.grey[400], fontSize: 11),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ],
               ),

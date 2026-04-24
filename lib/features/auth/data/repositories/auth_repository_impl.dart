@@ -15,7 +15,18 @@ class AuthRepositoryImpl implements AuthRepository {
       ApiConstants.login,
       data: {'email': email, 'password': password},
     );
-    return AuthResponse.fromJson(response.data);
+    
+    final responseData = response.data;
+    if (responseData is Map && responseData['success'] == false) {
+      throw DioException(
+        requestOptions: response.requestOptions,
+        response: response,
+        message: responseData['message'],
+      );
+    }
+    
+    final authData = responseData['data'] ?? responseData;
+    return AuthResponse.fromJson(authData);
   }
 
   @override
@@ -29,13 +40,26 @@ class AuthRepositoryImpl implements AuthRepository {
         'confirm_password': confirmPassword,
       },
     );
-    return AuthResponse.fromJson(response.data);
+    
+    final responseData = response.data;
+    if (responseData is Map && responseData['success'] == false) {
+      throw DioException(
+        requestOptions: response.requestOptions,
+        response: response,
+        message: responseData['message'],
+      );
+    }
+
+    final authData = responseData['data'] ?? responseData;
+    return AuthResponse.fromJson(authData);
   }
 
   @override
   Future<UserProfile> getMe() async {
     final response = await _dio.get(ApiConstants.me);
-    return UserProfile.fromJson(response.data);
+    final responseData = response.data;
+    final userData = responseData['data'] ?? responseData;
+    return UserProfile.fromJson(userData);
   }
 
   @override

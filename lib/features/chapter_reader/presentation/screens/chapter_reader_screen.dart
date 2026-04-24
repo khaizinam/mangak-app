@@ -6,12 +6,12 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import '../providers/chapter_reader_provider.dart';
 
 class ChapterReaderScreen extends HookConsumerWidget {
-  final String slug;
-  final int chapterId;
+  final String id;
+  final String chapterId;
 
   const ChapterReaderScreen({
     super.key,
-    required this.slug,
+    required this.id,
     required this.chapterId,
   });
 

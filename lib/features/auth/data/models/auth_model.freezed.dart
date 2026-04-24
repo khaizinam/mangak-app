@@ -236,10 +236,11 @@ UserProfile _$UserProfileFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserProfile {
-  int get id => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _readId)
+  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  @JsonKey(name: 'avatar_url')
+  @JsonKey(name: 'avatar')
   String? get avatarUrl => throw _privateConstructorUsedError;
 
   /// Serializes this UserProfile to a JSON map.
@@ -259,10 +260,10 @@ abstract class $UserProfileCopyWith<$Res> {
       _$UserProfileCopyWithImpl<$Res, UserProfile>;
   @useResult
   $Res call(
-      {int id,
+      {@JsonKey(readValue: _readId) String id,
       String name,
       String email,
-      @JsonKey(name: 'avatar_url') String? avatarUrl});
+      @JsonKey(name: 'avatar') String? avatarUrl});
 }
 
 /// @nodoc
@@ -289,7 +290,7 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -315,10 +316,10 @@ abstract class _$$UserProfileImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
+      {@JsonKey(readValue: _readId) String id,
       String name,
       String email,
-      @JsonKey(name: 'avatar_url') String? avatarUrl});
+      @JsonKey(name: 'avatar') String? avatarUrl});
 }
 
 /// @nodoc
@@ -343,7 +344,7 @@ class __$$UserProfileImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -364,22 +365,23 @@ class __$$UserProfileImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserProfileImpl implements _UserProfile {
   const _$UserProfileImpl(
-      {required this.id,
+      {@JsonKey(readValue: _readId) required this.id,
       required this.name,
       required this.email,
-      @JsonKey(name: 'avatar_url') this.avatarUrl});
+      @JsonKey(name: 'avatar') this.avatarUrl});
 
   factory _$UserProfileImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserProfileImplFromJson(json);
 
   @override
-  final int id;
+  @JsonKey(readValue: _readId)
+  final String id;
   @override
   final String name;
   @override
   final String email;
   @override
-  @JsonKey(name: 'avatar_url')
+  @JsonKey(name: 'avatar')
   final String? avatarUrl;
 
   @override
@@ -421,23 +423,23 @@ class _$UserProfileImpl implements _UserProfile {
 
 abstract class _UserProfile implements UserProfile {
   const factory _UserProfile(
-          {required final int id,
-          required final String name,
-          required final String email,
-          @JsonKey(name: 'avatar_url') final String? avatarUrl}) =
-      _$UserProfileImpl;
+      {@JsonKey(readValue: _readId) required final String id,
+      required final String name,
+      required final String email,
+      @JsonKey(name: 'avatar') final String? avatarUrl}) = _$UserProfileImpl;
 
   factory _UserProfile.fromJson(Map<String, dynamic> json) =
       _$UserProfileImpl.fromJson;
 
   @override
-  int get id;
+  @JsonKey(readValue: _readId)
+  String get id;
   @override
   String get name;
   @override
   String get email;
   @override
-  @JsonKey(name: 'avatar_url')
+  @JsonKey(name: 'avatar')
   String? get avatarUrl;
 
   /// Create a copy of UserProfile

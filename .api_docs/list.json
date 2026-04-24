@@ -1,0 +1,570 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 5958,
+            "name": "Quyến Rũ Cô Ấy",
+            "slug": "quyen-ru-co-ay",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/quyen-ru-co-ay-thumb.jpg",
+            "status": "ongoing",
+            "views": 293,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Quyến Rũ Cô Ấy [Chap 47]",
+                    "chapter_name": "47",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:59:11"
+        },
+        {
+            "id": 7760,
+            "name": "Q.e.d. Iff",
+            "slug": "qed-iff",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/qed-iff-thumb.jpg",
+            "status": "coming_soon",
+            "views": 291,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Q.e.d. Iff [Chap 1-60]",
+                    "chapter_name": "60",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:58:59"
+        },
+        {
+            "id": 7381,
+            "name": "Player",
+            "slug": "player",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/player-thumb.jpg",
+            "status": "ongoing",
+            "views": 99,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                },
+                {
+                    "id": 3,
+                    "name": "Adventure",
+                    "slug": "adventure"
+                },
+                {
+                    "id": 14,
+                    "name": "Fantasy",
+                    "slug": "fantasy"
+                },
+                {
+                    "id": 23,
+                    "name": "Manhwa",
+                    "slug": "manhwa"
+                },
+                {
+                    "id": 32,
+                    "name": "School Life",
+                    "slug": "school-life"
+                },
+                {
+                    "id": 44,
+                    "name": "Supernatural",
+                    "slug": "supernatural"
+                },
+                {
+                    "id": 50,
+                    "name": "Truyện Màu",
+                    "slug": "truyen-mau"
+                },
+                {
+                    "id": 52,
+                    "name": "Webtoon",
+                    "slug": "webtoon"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Player [Chap 254]",
+                    "chapter_name": "254",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:58:48"
+        },
+        {
+            "id": 7653,
+            "name": "Paradon",
+            "slug": "paradon",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/paradon-thumb.jpg",
+            "status": "coming_soon",
+            "views": 120,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Paradon [Chap 8]",
+                    "chapter_name": "8",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:58:28"
+        },
+        {
+            "id": 973,
+            "name": "Osoraku Kanojo Wa Ore No Aniki Wo Neratteru",
+            "slug": "osoraku-kanojo-wa-ore-no-aniki-wo-neratteru",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/osoraku-kanojo-wa-ore-no-aniki-wo-neratteru-thumb.jpg",
+            "status": "ongoing",
+            "views": 242,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Osoraku Kanojo Wa Ore No Aniki Wo Neratteru [Chap 22-23]",
+                    "chapter_name": "23",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:57:50"
+        },
+        {
+            "id": 7761,
+            "name": "Osananajimi Omiru Me Ga Kawatte Shimatta",
+            "slug": "osananajimi-omiru-me-ga-kawatte-shimatta",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/osananajimi-omiru-me-ga-kawatte-shimatta-thumb.jpg",
+            "status": "coming_soon",
+            "views": 207,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Osananajimi Omiru Me Ga Kawatte Shimatta [Chap 1-4]",
+                    "chapter_name": "4",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:57:39"
+        },
+        {
+            "id": 7565,
+            "name": "Ông Trời Đã Ban Cho Tôi Siêu Năng Lực Kỳ Lạ Gì Thế Này?",
+            "slug": "ong-troi-da-ban-cho-toi-sieu-nang-luc-ky-la-gi-the-nay",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/ong-troi-da-ban-cho-toi-sieu-nang-luc-ky-la-gi-the-nay-thumb.jpg",
+            "status": "ongoing",
+            "views": 216,
+            "category": [
+                {
+                    "id": 6,
+                    "name": "Comedy",
+                    "slug": "comedy"
+                },
+                {
+                    "id": 14,
+                    "name": "Fantasy",
+                    "slug": "fantasy"
+                },
+                {
+                    "id": 50,
+                    "name": "Truyện Màu",
+                    "slug": "truyen-mau"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Ông Trời Đã Ban Cho Tôi Siêu Năng Lực Kỳ Lạ Gì Thế Này [Chap 102-107]",
+                    "chapter_name": "107",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:57:10"
+        },
+        {
+            "id": 7762,
+            "name": "One-Punch Man (Webcomic)",
+            "slug": "one-punch-man-webcomic",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/one-punch-man-webcomic-thumb.jpg",
+            "status": "coming_soon",
+            "views": 178,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "One-Punch Man (Webcomic) [Chap 1-159]",
+                    "chapter_name": "159",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:56:52"
+        },
+        {
+            "id": 7170,
+            "name": "Ở Đây Có Mèo",
+            "slug": "o-day-co-meo",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/o-day-co-meo-thumb.jpg",
+            "status": "coming_soon",
+            "views": 257,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Ở Đây Có Mèo [Chap 6]",
+                    "chapter_name": "6",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:56:25"
+        },
+        {
+            "id": 7128,
+            "name": "Ninja Và Yakuza",
+            "slug": "ninja-va-yakuza",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/ninja-va-yakuza-thumb.jpg",
+            "status": "ongoing",
+            "views": 136,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Ninja Và Yakuza [Chap 99-101]",
+                    "chapter_name": "101",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:56:12"
+        },
+        {
+            "id": 7763,
+            "name": "Những Cô Bạn Thuở Nhỏ Của Tôi Đã Trở Thành Idol Và Đang Chiều Chuộng Tôi Mỗi Ngày.",
+            "slug": "nhung-co-ban-thuo-nho-cua-toi-da-tro-thanh-idol-va-dang-chieu-chuong-toi-moi-ngay",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/nhung-co-ban-thuo-nho-cua-toi-da-tro-thanh-idol-va-dang-chieu-chuong-toi-moi-ngay-thumb.jpg",
+            "status": "coming_soon",
+            "views": 270,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Những Cô Bạn Thuở Nhỏ Của Tôi Đã Trở Thành Idol Và Đang Chiều Chuộng Tôi Mỗi Ngày. [Chap 1-1]",
+                    "chapter_name": "1",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:55:58"
+        },
+        {
+            "id": 7764,
+            "name": "Nhật Ký Giấc Mơ",
+            "slug": "nhat-ky-giac-mo",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/nhat-ky-giac-mo-thumb.jpg",
+            "status": "coming_soon",
+            "views": 58,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Nhật Ký Giấc Mơ [Chap 1-7]",
+                    "chapter_name": "7",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:55:02"
+        },
+        {
+            "id": 7765,
+            "name": "Nhật Bản Thời Kỳ Loạn Tam Quốc",
+            "slug": "nhat-ban-thoi-ky-loan-tam-quoc",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/nhat-ban-thoi-ky-loan-tam-quoc-thumb.jpg",
+            "status": "coming_soon",
+            "views": 55,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Nhật Bản Thời Kỳ Loạn Tam Quốc [Chap 1-999]",
+                    "chapter_name": "999",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:54:47"
+        },
+        {
+            "id": 153,
+            "name": "Nhân Vật Chính Chỉ Muốn Yêu Đương",
+            "slug": "nhan-vat-chinh-chi-muon-yeu-duong",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/nhan-vat-chinh-chi-muon-yeu-duong-thumb.jpg",
+            "status": "ongoing",
+            "views": 3,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Nhân Vật Chính Chỉ Muốn Yêu Đương [Chap 281]",
+                    "chapter_name": "281",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:54:25"
+        },
+        {
+            "id": 7115,
+            "name": "Nguyện Cầu Cùng Bóng Ma",
+            "slug": "nguyen-cau-cung-bong-ma",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/nguyen-cau-cung-bong-ma-thumb.jpg",
+            "status": "coming_soon",
+            "views": 105,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Nguyện Cầu Cùng Bóng Ma [Chap 6-7]",
+                    "chapter_name": "7",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:54:10"
+        },
+        {
+            "id": 6968,
+            "name": "Người Xấu",
+            "slug": "nguoi-xau",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/nguoi-xau-thumb.jpg",
+            "status": "ongoing",
+            "views": 171,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                },
+                {
+                    "id": 23,
+                    "name": "Manhwa",
+                    "slug": "manhwa"
+                },
+                {
+                    "id": 32,
+                    "name": "School Life",
+                    "slug": "school-life"
+                },
+                {
+                    "id": 50,
+                    "name": "Truyện Màu",
+                    "slug": "truyen-mau"
+                },
+                {
+                    "id": 52,
+                    "name": "Webtoon",
+                    "slug": "webtoon"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Người Xấu [Chap 296-298]",
+                    "chapter_name": "298",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:53:57"
+        },
+        {
+            "id": 7766,
+            "name": "Người Dọn Dẹp",
+            "slug": "nguoi-don-dep",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/nguoi-don-dep-thumb.jpg",
+            "status": "coming_soon",
+            "views": 100,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Tôi Chỉ Là Một Người Dọn Dẹp [Chap 32]",
+                    "chapter_name": "32",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:53:38"
+        },
+        {
+            "id": 4066,
+            "name": "Người Chơi Mới Cấp Tối Đa",
+            "slug": "nguoi-choi-moi-cap-toi-da",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/nguoi-choi-moi-cap-toi-da-thumb.jpg",
+            "status": "ongoing",
+            "views": 311,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                },
+                {
+                    "id": 3,
+                    "name": "Adventure",
+                    "slug": "adventure"
+                },
+                {
+                    "id": 14,
+                    "name": "Fantasy",
+                    "slug": "fantasy"
+                },
+                {
+                    "id": 23,
+                    "name": "Manhwa",
+                    "slug": "manhwa"
+                },
+                {
+                    "id": 37,
+                    "name": "Shounen",
+                    "slug": "shounen"
+                },
+                {
+                    "id": 50,
+                    "name": "Truyện Màu",
+                    "slug": "truyen-mau"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Người Chơi Mới Cấp Tối Đa [Chap 253-254]",
+                    "chapter_name": "254",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:49:38"
+        },
+        {
+            "id": 7767,
+            "name": "Người Chơi Lỗi",
+            "slug": "nguoi-choi-loi",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/nguoi-choi-loi-thumb.jpg",
+            "status": "ongoing",
+            "views": 284,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Người Chơi Lỗi [Chap 181-182]",
+                    "chapter_name": "182",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:49:24"
+        },
+        {
+            "id": 7739,
+            "name": "Ngọn Đồi Ước Mơ Wonderland",
+            "slug": "ngon-doi-uoc-mo-wonderland",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/ngon-doi-uoc-mo-wonderland-thumb.jpg",
+            "status": "coming_soon",
+            "views": 296,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Ngọn Đồi Ước Mơ Wonderland [Chap 10]",
+                    "chapter_name": "10",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-23 16:49:05"
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "currentUri": {},
+            "uri": {},
+            "hasMore": false,
+            "total": 4978,
+            "perPage": 20,
+            "pageCount": 249,
+            "pageSelector": "page",
+            "currentPage": 1,
+            "next": "https://mangak.io.vn/api/v2/stories/list?page=2",
+            "previous": null,
+            "segment": 0
+        }
+    }
+}

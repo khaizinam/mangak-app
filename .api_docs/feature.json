@@ -1,0 +1,1382 @@
+{
+    "success": true,
+    "data": [
+        {
+            "category": {
+                "id": 21,
+                "name": "Manga",
+                "slug": "manga"
+            },
+            "stories": [
+                {
+                    "id": 1,
+                    "name": "Wind Breaker",
+                    "slug": "wind-breaker",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/wind-breaker-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 3111,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 6,
+                            "name": "Comedy",
+                            "slug": "comedy"
+                        },
+                        {
+                            "id": 21,
+                            "name": "Manga",
+                            "slug": "manga"
+                        },
+                        {
+                            "id": 32,
+                            "name": "School Life",
+                            "slug": "school-life"
+                        },
+                        {
+                            "id": 37,
+                            "name": "Shounen",
+                            "slug": "shounen"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Wind Breaker (Nii Satoru) [Chap 193-211]",
+                            "chapter_name": "211",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-04-20 19:17:09"
+                },
+                {
+                    "id": 453,
+                    "name": "Noa-senpai wa Tomodachi",
+                    "slug": "noa-senpai-wa-tomodachi",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/noa-senpai-wa-tomodachi-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 2354,
+                    "category": [
+                        {
+                            "id": 6,
+                            "name": "Comedy",
+                            "slug": "comedy"
+                        },
+                        {
+                            "id": 21,
+                            "name": "Manga",
+                            "slug": "manga"
+                        },
+                        {
+                            "id": 31,
+                            "name": "Romance",
+                            "slug": "romance"
+                        },
+                        {
+                            "id": 39,
+                            "name": "Slice of Life",
+                            "slug": "slice-of-life"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Noa-Senpai Wa Tomodachi [Chap 46-47]",
+                            "chapter_name": "47",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-02-27 10:53:31"
+                },
+                {
+                    "id": 493,
+                    "name": "Tearmoon Empire Story",
+                    "slug": "tearmoon-empire-story",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/tearmoon-empire-story-thumb.jpg",
+                    "status": "coming_soon",
+                    "views": 1067,
+                    "category": [
+                        {
+                            "id": 6,
+                            "name": "Comedy",
+                            "slug": "comedy"
+                        },
+                        {
+                            "id": 11,
+                            "name": "Drama",
+                            "slug": "drama"
+                        },
+                        {
+                            "id": 17,
+                            "name": "Historical",
+                            "slug": "historical"
+                        },
+                        {
+                            "id": 21,
+                            "name": "Manga",
+                            "slug": "manga"
+                        },
+                        {
+                            "id": 31,
+                            "name": "Romance",
+                            "slug": "romance"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Tearmoon Empire Story [Chap 52]",
+                            "chapter_name": "52",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-03-27 15:08:10"
+                },
+                {
+                    "id": 126,
+                    "name": "Ruri Dragon",
+                    "slug": "ruri-dragon",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/ruri-dragon-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 552,
+                    "category": [
+                        {
+                            "id": 6,
+                            "name": "Comedy",
+                            "slug": "comedy"
+                        },
+                        {
+                            "id": 14,
+                            "name": "Fantasy",
+                            "slug": "fantasy"
+                        },
+                        {
+                            "id": 21,
+                            "name": "Manga",
+                            "slug": "manga"
+                        },
+                        {
+                            "id": 32,
+                            "name": "School Life",
+                            "slug": "school-life"
+                        },
+                        {
+                            "id": 39,
+                            "name": "Slice of Life",
+                            "slug": "slice-of-life"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Ruri Dragon [Chap 45]",
+                            "chapter_name": "45",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-03-14 11:44:04"
+                },
+                {
+                    "id": 296,
+                    "name": "Imouto no Tomodachi ga Nani Kangae Teru no ka Wakaranai",
+                    "slug": "imouto-no-tomodachi-ga-nani-kangae-teru-no-ka-wakaranai",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/imouto-no-tomodachi-ga-nani-kangae-teru-no-ka-wakaranai-thumb.jpg",
+                    "status": "completed",
+                    "views": 476,
+                    "category": [
+                        {
+                            "id": 6,
+                            "name": "Comedy",
+                            "slug": "comedy"
+                        },
+                        {
+                            "id": 21,
+                            "name": "Manga",
+                            "slug": "manga"
+                        },
+                        {
+                            "id": 32,
+                            "name": "School Life",
+                            "slug": "school-life"
+                        },
+                        {
+                            "id": 39,
+                            "name": "Slice of Life",
+                            "slug": "slice-of-life"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Imouto No Tomodachi Ga Nani Kangae Teru No Ka Wakaranai [Chap 22-24]",
+                            "chapter_name": "24",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-04-23 16:26:17"
+                },
+                {
+                    "id": 26,
+                    "name": "The Fragrant Flower Blooms With Dignity - Kaoru Hana Wa Rin To Saku",
+                    "slug": "the-fragrant-flower-blooms-with-dignity-kaoru-hana-wa-rin-to-saku",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/the-fragrant-flower-blooms-with-dignity-kaoru-hana-wa-rin-to-saku-thumb.jpg",
+                    "status": "coming_soon",
+                    "views": 469,
+                    "category": [
+                        {
+                            "id": 6,
+                            "name": "Comedy",
+                            "slug": "comedy"
+                        },
+                        {
+                            "id": 11,
+                            "name": "Drama",
+                            "slug": "drama"
+                        },
+                        {
+                            "id": 21,
+                            "name": "Manga",
+                            "slug": "manga"
+                        },
+                        {
+                            "id": 31,
+                            "name": "Romance",
+                            "slug": "romance"
+                        },
+                        {
+                            "id": 32,
+                            "name": "School Life",
+                            "slug": "school-life"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "The Fragrant Flower Blooms With Dignity - Kaoru Hana Wa Rin To Saku [Chap 181]",
+                            "chapter_name": "181",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-03-22 12:10:52"
+                },
+                {
+                    "id": 144,
+                    "name": "Flying Witch",
+                    "slug": "flying-witch",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/flying-witch-thumb.jpg",
+                    "status": "coming_soon",
+                    "views": 446,
+                    "category": [
+                        {
+                            "id": 14,
+                            "name": "Fantasy",
+                            "slug": "fantasy"
+                        },
+                        {
+                            "id": 21,
+                            "name": "Manga",
+                            "slug": "manga"
+                        },
+                        {
+                            "id": 37,
+                            "name": "Shounen",
+                            "slug": "shounen"
+                        },
+                        {
+                            "id": 39,
+                            "name": "Slice of Life",
+                            "slug": "slice-of-life"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Flying Witch [Chap 87]",
+                            "chapter_name": "87",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-03-26 14:42:02"
+                },
+                {
+                    "id": 2791,
+                    "name": "Ashita no Joe",
+                    "slug": "ashita-no-joe",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/ashita-no-joe-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 383,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 11,
+                            "name": "Drama",
+                            "slug": "drama"
+                        },
+                        {
+                            "id": 21,
+                            "name": "Manga",
+                            "slug": "manga"
+                        },
+                        {
+                            "id": 37,
+                            "name": "Shounen",
+                            "slug": "shounen"
+                        },
+                        {
+                            "id": 39,
+                            "name": "Slice of Life",
+                            "slug": "slice-of-life"
+                        },
+                        {
+                            "id": 43,
+                            "name": "Sports",
+                            "slug": "sports"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Ashita no Joe [Chap 200.5]",
+                            "chapter_name": "200.5",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2023-12-28 12:20:35"
+                },
+                {
+                    "id": 4272,
+                    "name": "Học Viện Anh Hùng",
+                    "slug": "truong-hoc-sieu-anh-hung",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/truong-hoc-sieu-anh-hung-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 364,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Adventure",
+                            "slug": "adventure"
+                        },
+                        {
+                            "id": 6,
+                            "name": "Comedy",
+                            "slug": "comedy"
+                        },
+                        {
+                            "id": 21,
+                            "name": "Manga",
+                            "slug": "manga"
+                        },
+                        {
+                            "id": 37,
+                            "name": "Shounen",
+                            "slug": "shounen"
+                        },
+                        {
+                            "id": 44,
+                            "name": "Supernatural",
+                            "slug": "supernatural"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Học Viện Anh Hùng [Chap 431]",
+                            "chapter_name": "431",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2024-12-06 10:19:48"
+                },
+                {
+                    "id": 947,
+                    "name": "Tsuihousha Shokudou E Youkoso!",
+                    "slug": "tsuihousha-shokudou-e-youkoso",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/tsuihousha-shokudou-e-youkoso-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 363,
+                    "category": [
+                        {
+                            "id": 6,
+                            "name": "Comedy",
+                            "slug": "comedy"
+                        },
+                        {
+                            "id": 8,
+                            "name": "Cooking",
+                            "slug": "cooking"
+                        },
+                        {
+                            "id": 14,
+                            "name": "Fantasy",
+                            "slug": "fantasy"
+                        },
+                        {
+                            "id": 21,
+                            "name": "Manga",
+                            "slug": "manga"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Tsuihousha Shokudou E Youkoso! [Chap 52]",
+                            "chapter_name": "52",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-03-15 20:17:54"
+                }
+            ]
+        },
+        {
+            "category": {
+                "id": 22,
+                "name": "Manhua",
+                "slug": "manhua"
+            },
+            "stories": [
+                {
+                    "id": 1575,
+                    "name": "Đại Tượng Vô Hình",
+                    "slug": "dai-tuong-vo-hinh",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/dai-tuong-vo-hinh-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 40541,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Adventure",
+                            "slug": "adventure"
+                        },
+                        {
+                            "id": 11,
+                            "name": "Drama",
+                            "slug": "drama"
+                        },
+                        {
+                            "id": 14,
+                            "name": "Fantasy",
+                            "slug": "fantasy"
+                        },
+                        {
+                            "id": 18,
+                            "name": "Horror",
+                            "slug": "horror"
+                        },
+                        {
+                            "id": 22,
+                            "name": "Manhua",
+                            "slug": "manhua"
+                        },
+                        {
+                            "id": 27,
+                            "name": "Mystery",
+                            "slug": "mystery"
+                        },
+                        {
+                            "id": 44,
+                            "name": "Supernatural",
+                            "slug": "supernatural"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        },
+                        {
+                            "id": 52,
+                            "name": "Webtoon",
+                            "slug": "webtoon"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Đại Tượng Vô Hình [Chap 552-554]",
+                            "chapter_name": "554",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-04-15 19:41:46"
+                },
+                {
+                    "id": 691,
+                    "name": "Vô Địch Bị Động Tạo Ra Tấn Sát Thương",
+                    "slug": "vo-dich-bi-dong-tao-ra-tan-sat-thuong",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/vo-dich-bi-dong-tao-ra-tan-sat-thuong-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 29300,
+                    "category": [
+                        {
+                            "id": 18,
+                            "name": "Horror",
+                            "slug": "horror"
+                        },
+                        {
+                            "id": 22,
+                            "name": "Manhua",
+                            "slug": "manhua"
+                        },
+                        {
+                            "id": 27,
+                            "name": "Mystery",
+                            "slug": "mystery"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Vô Địch Bị Động Tạo Ra Tấn Sát Thương [Chap 160-161]",
+                            "chapter_name": "161",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-04-09 14:39:07"
+                },
+                {
+                    "id": 1579,
+                    "name": "Chàng Rể Mạnh Nhất Lịch Sử",
+                    "slug": "chang-re-manh-nhat-lich-su",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/chang-re-manh-nhat-lich-su-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 16219,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Adventure",
+                            "slug": "adventure"
+                        },
+                        {
+                            "id": 22,
+                            "name": "Manhua",
+                            "slug": "manhua"
+                        },
+                        {
+                            "id": 27,
+                            "name": "Mystery",
+                            "slug": "mystery"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        },
+                        {
+                            "id": 53,
+                            "name": "Xuyên Không",
+                            "slug": "xuyen-khong"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Chàng Rể Mạnh Nhất Lịch Sử [Chap 395]",
+                            "chapter_name": "395",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-04-20 18:31:56"
+                },
+                {
+                    "id": 1524,
+                    "name": "Ta Có Một Sơn Trại",
+                    "slug": "ta-co-mot-son-trai",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/ta-co-mot-son-trai-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 12929,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 5,
+                            "name": "Chuyển Sinh",
+                            "slug": "chuyen-sinh"
+                        },
+                        {
+                            "id": 14,
+                            "name": "Fantasy",
+                            "slug": "fantasy"
+                        },
+                        {
+                            "id": 22,
+                            "name": "Manhua",
+                            "slug": "manhua"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Ta Có Một Sơn Trại [Chap 1273]",
+                            "chapter_name": "1273",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-01-15 19:02:53"
+                },
+                {
+                    "id": 162,
+                    "name": "Vạn Cổ Chí Tôn",
+                    "slug": "van-co-chi-ton",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/van-co-chi-ton-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 9202,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 5,
+                            "name": "Chuyển Sinh",
+                            "slug": "chuyen-sinh"
+                        },
+                        {
+                            "id": 22,
+                            "name": "Manhua",
+                            "slug": "manhua"
+                        },
+                        {
+                            "id": 27,
+                            "name": "Mystery",
+                            "slug": "mystery"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        },
+                        {
+                            "id": 53,
+                            "name": "Xuyên Không",
+                            "slug": "xuyen-khong"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Vạn Cổ Chí Tôn [Chap 509-512]",
+                            "chapter_name": "512",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-03-23 14:40:17"
+                },
+                {
+                    "id": 84,
+                    "name": "Vưu Vật",
+                    "slug": "vuu-vat",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/vuu-vat-thumb.jpg",
+                    "status": "coming_soon",
+                    "views": 6475,
+                    "category": [
+                        {
+                            "id": 22,
+                            "name": "Manhua",
+                            "slug": "manhua"
+                        },
+                        {
+                            "id": 28,
+                            "name": "Ngôn Tình",
+                            "slug": "ngon-tinh"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Vưu Vật [Chap 186]",
+                            "chapter_name": "186",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-04-09 14:39:26"
+                },
+                {
+                    "id": 1583,
+                    "name": "Tinh Mộng Thần Tượng",
+                    "slug": "tinh-mong-than-tuong",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/tinh-mong-than-tuong-thumb.jpg",
+                    "status": "completed",
+                    "views": 5085,
+                    "category": [
+                        {
+                            "id": 11,
+                            "name": "Drama",
+                            "slug": "drama"
+                        },
+                        {
+                            "id": 22,
+                            "name": "Manhua",
+                            "slug": "manhua"
+                        },
+                        {
+                            "id": 28,
+                            "name": "Ngôn Tình",
+                            "slug": "ngon-tinh"
+                        },
+                        {
+                            "id": 31,
+                            "name": "Romance",
+                            "slug": "romance"
+                        },
+                        {
+                            "id": 35,
+                            "name": "Shoujo",
+                            "slug": "shoujo"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Tinh Mộng Thần Tượng [Chap 351.4]",
+                            "chapter_name": "351.4",
+                            "chapter_title": "Ngoại truyện 4"
+                        }
+                    ],
+                    "updatedAt": "2023-12-20 11:20:56"
+                },
+                {
+                    "id": 261,
+                    "name": "Ứng Dụng Thần Kỳ",
+                    "slug": "ung-dung-than-ky",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/ung-dung-than-ky-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 3556,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 14,
+                            "name": "Fantasy",
+                            "slug": "fantasy"
+                        },
+                        {
+                            "id": 22,
+                            "name": "Manhua",
+                            "slug": "manhua"
+                        },
+                        {
+                            "id": 24,
+                            "name": "Martial Arts",
+                            "slug": "martial-arts"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Ứng Dụng Thần Kỳ [Chap 140-144]",
+                            "chapter_name": "144",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-04-20 19:11:34"
+                },
+                {
+                    "id": 1585,
+                    "name": "Thiên Mệnh Xa Đao Nhân",
+                    "slug": "thien-menh-xa-dao-nhan",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/thien-menh-xa-dao-nhan-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 2725,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Adventure",
+                            "slug": "adventure"
+                        },
+                        {
+                            "id": 14,
+                            "name": "Fantasy",
+                            "slug": "fantasy"
+                        },
+                        {
+                            "id": 22,
+                            "name": "Manhua",
+                            "slug": "manhua"
+                        },
+                        {
+                            "id": 24,
+                            "name": "Martial Arts",
+                            "slug": "martial-arts"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Thiên Mệnh Xa Đao Nhân [Chap 137]",
+                            "chapter_name": "137",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2023-12-21 10:18:10"
+                },
+                {
+                    "id": 254,
+                    "name": "Đấu Phá Thương Khung",
+                    "slug": "dau-pha-thuong-khung",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/dau-pha-thuong-khung-thumb.jpg",
+                    "status": "coming_soon",
+                    "views": 2221,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Adventure",
+                            "slug": "adventure"
+                        },
+                        {
+                            "id": 6,
+                            "name": "Comedy",
+                            "slug": "comedy"
+                        },
+                        {
+                            "id": 22,
+                            "name": "Manhua",
+                            "slug": "manhua"
+                        },
+                        {
+                            "id": 27,
+                            "name": "Mystery",
+                            "slug": "mystery"
+                        },
+                        {
+                            "id": 44,
+                            "name": "Supernatural",
+                            "slug": "supernatural"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Đấu Phá Thương Khung [Chap 512]",
+                            "chapter_name": "512",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-03-25 10:48:30"
+                }
+            ]
+        },
+        {
+            "category": {
+                "id": 23,
+                "name": "Manhwa",
+                "slug": "manhwa"
+            },
+            "stories": [
+                {
+                    "id": 190,
+                    "name": "Kí Sự Hồi Quy",
+                    "slug": "ki-su-hoi-quy",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/ki-su-hoi-quy-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 5278,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Adventure",
+                            "slug": "adventure"
+                        },
+                        {
+                            "id": 5,
+                            "name": "Chuyển Sinh",
+                            "slug": "chuyen-sinh"
+                        },
+                        {
+                            "id": 6,
+                            "name": "Comedy",
+                            "slug": "comedy"
+                        },
+                        {
+                            "id": 14,
+                            "name": "Fantasy",
+                            "slug": "fantasy"
+                        },
+                        {
+                            "id": 16,
+                            "name": "Harem",
+                            "slug": "harem"
+                        },
+                        {
+                            "id": 23,
+                            "name": "Manhwa",
+                            "slug": "manhwa"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Kí Sự Hồi Quy [Chap 179]",
+                            "chapter_name": "179",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-03-09 09:35:02"
+                },
+                {
+                    "id": 1310,
+                    "name": "Nhiệm Vụ Đời Thật",
+                    "slug": "nhiem-vu-doi-that",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/nhiem-vu-doi-that-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 4909,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 23,
+                            "name": "Manhwa",
+                            "slug": "manhwa"
+                        },
+                        {
+                            "id": 32,
+                            "name": "School Life",
+                            "slug": "school-life"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        },
+                        {
+                            "id": 52,
+                            "name": "Webtoon",
+                            "slug": "webtoon"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Nhiệm Vụ Đời Thật [Chap 200]",
+                            "chapter_name": "200",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-04-12 14:55:41"
+                },
+                {
+                    "id": 1584,
+                    "name": "Học Nhóm - Study Group",
+                    "slug": "hoc-nhom-study-group",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/hoc-nhom-study-group-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 2561,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 11,
+                            "name": "Drama",
+                            "slug": "drama"
+                        },
+                        {
+                            "id": 23,
+                            "name": "Manhwa",
+                            "slug": "manhwa"
+                        },
+                        {
+                            "id": 24,
+                            "name": "Martial Arts",
+                            "slug": "martial-arts"
+                        },
+                        {
+                            "id": 32,
+                            "name": "School Life",
+                            "slug": "school-life"
+                        },
+                        {
+                            "id": 37,
+                            "name": "Shounen",
+                            "slug": "shounen"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Học Nhóm - Study Group [Chap 234]",
+                            "chapter_name": "234",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2023-12-28 10:45:19"
+                },
+                {
+                    "id": 1531,
+                    "name": "Thiên Ma Tái Lâm",
+                    "slug": "thien-ma-tai-lam",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/thien-ma-tai-lam-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 2432,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Adventure",
+                            "slug": "adventure"
+                        },
+                        {
+                            "id": 23,
+                            "name": "Manhwa",
+                            "slug": "manhwa"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Thiên Ma Tái Lâm [Chap 110-115]",
+                            "chapter_name": "115",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-04-20 19:04:40"
+                },
+                {
+                    "id": 257,
+                    "name": "Những Nhân Vật Mạnh Nhất Thế Giới Ám Ảnh Tôi",
+                    "slug": "nhung-nhan-vat-manh-nhat-the-gioi-am-anh-toi",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/nhung-nhan-vat-manh-nhat-the-gioi-am-anh-toi-thumb.jpg",
+                    "status": "coming_soon",
+                    "views": 1488,
+                    "category": [
+                        {
+                            "id": 9,
+                            "name": "Cổ Đại",
+                            "slug": "co-dai"
+                        },
+                        {
+                            "id": 16,
+                            "name": "Harem",
+                            "slug": "harem"
+                        },
+                        {
+                            "id": 23,
+                            "name": "Manhwa",
+                            "slug": "manhwa"
+                        },
+                        {
+                            "id": 28,
+                            "name": "Ngôn Tình",
+                            "slug": "ngon-tinh"
+                        },
+                        {
+                            "id": 31,
+                            "name": "Romance",
+                            "slug": "romance"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        },
+                        {
+                            "id": 53,
+                            "name": "Xuyên Không",
+                            "slug": "xuyen-khong"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Những Nhân Vật Mạnh Nhất Thế Giới Ám Ảnh Tôi [Chap 151]",
+                            "chapter_name": "151",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-02-23 15:00:11"
+                },
+                {
+                    "id": 417,
+                    "name": "Sắp Xuất Ngũ Thì Isekai",
+                    "slug": "sap-xuat-ngu-thi-isekai",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/sap-xuat-ngu-thi-isekai-thumb.jpg",
+                    "status": "coming_soon",
+                    "views": 1424,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 6,
+                            "name": "Comedy",
+                            "slug": "comedy"
+                        },
+                        {
+                            "id": 11,
+                            "name": "Drama",
+                            "slug": "drama"
+                        },
+                        {
+                            "id": 14,
+                            "name": "Fantasy",
+                            "slug": "fantasy"
+                        },
+                        {
+                            "id": 23,
+                            "name": "Manhwa",
+                            "slug": "manhwa"
+                        },
+                        {
+                            "id": 37,
+                            "name": "Shounen",
+                            "slug": "shounen"
+                        },
+                        {
+                            "id": 44,
+                            "name": "Supernatural",
+                            "slug": "supernatural"
+                        },
+                        {
+                            "id": 52,
+                            "name": "Webtoon",
+                            "slug": "webtoon"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Sắp Xuất Ngũ Thì Isekai [Chap 193]",
+                            "chapter_name": "193",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-03-30 14:40:01"
+                },
+                {
+                    "id": 256,
+                    "name": "Đế Vương Hồi Quy",
+                    "slug": "de-vuong-hoi-quy",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/de-vuong-hoi-quy-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 1408,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Adventure",
+                            "slug": "adventure"
+                        },
+                        {
+                            "id": 23,
+                            "name": "Manhwa",
+                            "slug": "manhwa"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Đế Vương Hồi Quy [Chap 125-126]",
+                            "chapter_name": "126",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-03-27 14:53:48"
+                },
+                {
+                    "id": 460,
+                    "name": "Tiên Kiếm Bất Bại",
+                    "slug": "tien-kiem-bat-bai",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/tien-kiem-bat-bai-thumb.jpg",
+                    "status": "coming_soon",
+                    "views": 1304,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 9,
+                            "name": "Cổ Đại",
+                            "slug": "co-dai"
+                        },
+                        {
+                            "id": 14,
+                            "name": "Fantasy",
+                            "slug": "fantasy"
+                        },
+                        {
+                            "id": 23,
+                            "name": "Manhwa",
+                            "slug": "manhwa"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Tiên Kiếm Bất Bại [Chap 290-294]",
+                            "chapter_name": "294",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-04-15 20:25:12"
+                },
+                {
+                    "id": 400,
+                    "name": "Vua Hiệp Sĩ Đã Trở Lại Với Một Vị Thần",
+                    "slug": "vua-hiep-si-da-tro-lai-voi-mot-vi-than",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/vua-hiep-si-da-tro-lai-voi-mot-vi-than-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 1277,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 23,
+                            "name": "Manhwa",
+                            "slug": "manhwa"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Vua Hiệp Sĩ Đã Trở Lại Với Một Vị Thần [Chap 158]",
+                            "chapter_name": "158",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-04-15 20:31:00"
+                },
+                {
+                    "id": 182,
+                    "name": "Huyền Thoại Game Thủ - Tái Xuất",
+                    "slug": "huyen-thoai-game-thu-tai-xuat",
+                    "thumb_url": "https://img.otruyenapi.com/uploads/comics/huyen-thoai-game-thu-tai-xuat-thumb.jpg",
+                    "status": "ongoing",
+                    "views": 1258,
+                    "category": [
+                        {
+                            "id": 1,
+                            "name": "Action",
+                            "slug": "action"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Adventure",
+                            "slug": "adventure"
+                        },
+                        {
+                            "id": 6,
+                            "name": "Comedy",
+                            "slug": "comedy"
+                        },
+                        {
+                            "id": 14,
+                            "name": "Fantasy",
+                            "slug": "fantasy"
+                        },
+                        {
+                            "id": 23,
+                            "name": "Manhwa",
+                            "slug": "manhwa"
+                        },
+                        {
+                            "id": 37,
+                            "name": "Shounen",
+                            "slug": "shounen"
+                        },
+                        {
+                            "id": 50,
+                            "name": "Truyện Màu",
+                            "slug": "truyen-mau"
+                        }
+                    ],
+                    "chaptersLatest": [
+                        {
+                            "filename": "Huyền Thoại Game Thủ - Tái Xuất [Chap 237]",
+                            "chapter_name": "237",
+                            "chapter_title": ""
+                        }
+                    ],
+                    "updatedAt": "2026-04-08 21:23:56"
+                }
+            ]
+        }
+    ]
+}

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/widgets/manga_card.dart';
+import '../../data/models/manga_model.dart';
 import '../providers/home_provider.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -11,16 +12,14 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final hotManga = ref.watch(hotMangaProvider);
     final updatedManga = ref.watch(updatedMangaProvider);
-    final categories = ref.watch(categoriesProvider);
-    final recommendedManga = ref.watch(recommendedMangaProvider);
+    final featuredSections = ref.watch(featuredSectionsProvider);
 
     return Scaffold(
       body: RefreshIndicator(
         onRefresh: () async {
           ref.invalidate(hotMangaProvider);
           ref.invalidate(updatedMangaProvider);
-          ref.invalidate(categoriesProvider);
-          ref.invalidate(recommendedMangaProvider);
+          ref.invalidate(featuredSectionsProvider);
         },
         child: CustomScrollView(
           slivers: [
@@ -35,15 +34,11 @@ class HomeScreen extends ConsumerWidget {
             SliverToBoxAdapter(child: _buildSectionTitle('Truyện Hot 🔥')),
             SliverToBoxAdapter(child: _buildHorizontalList(hotManga, context)),
             
+            SliverToBoxAdapter(child: _buildFeaturedSections(featuredSections, context)),
+            
             SliverToBoxAdapter(child: _buildSectionTitle('Mới cập nhật 🕒')),
-            SliverToBoxAdapter(child: _buildHorizontalList(updatedManga, context)),
-            
-            SliverToBoxAdapter(child: _buildSectionTitle('Thể loại')),
-            SliverToBoxAdapter(child: _buildGenreChips(categories)),
-            
-            SliverToBoxAdapter(child: _buildSectionTitle('Đề xuất cho bạn ✨')),
-            _buildRecommendedGrid(recommendedManga, context),
-            
+            _buildUpdatedGrid(updatedManga, context),
+            _buildLoadMoreButton(ref),
             const SliverToBoxAdapter(child: SizedBox(height: 24)),
           ],
         ),
@@ -61,7 +56,7 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildHorizontalList(AsyncValue hotManga, BuildContext context) {
+  Widget _buildHorizontalList(AsyncValue<List<MangaModel>> hotManga, BuildContext context) {
     return SizedBox(
       height: 220,
       child: hotManga.when(
@@ -73,7 +68,7 @@ class HomeScreen extends ConsumerWidget {
             width: 140,
             child: MangaCard(
               manga: list[index],
-              onTap: () => context.push('/manga/${list[index].slug}'),
+              onTap: () => context.push('/manga/${list[index].id}'),
             ),
           ),
         ),
@@ -83,30 +78,24 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildGenreChips(AsyncValue categories) {
-    return SizedBox(
-      height: 50,
-      child: categories.when(
-        data: (list) => ListView.builder(
-          scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          itemCount: list.length,
-          itemBuilder: (context, index) => Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: ActionChip(
-              label: Text(list[index].name),
-              onPressed: () => context.push('/category/${list[index].slug}'),
-            ),
-          ),
-        ),
-        loading: () => const SizedBox(),
-        error: (e, s) => const SizedBox(),
+  Widget _buildFeaturedSections(AsyncValue<List<FeaturedSectionModel>> featuredSections, BuildContext context) {
+    return featuredSections.when(
+      data: (sections) => Column(
+        children: sections.map<Widget>((section) => Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildSectionTitle(section.category.name),
+            _buildHorizontalList(AsyncValue.data(section.stories), context),
+          ],
+        )).toList(),
       ),
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (e, s) => const SizedBox(),
     );
   }
 
-  Widget _buildRecommendedGrid(AsyncValue recommendedManga, BuildContext context) {
-    return recommendedManga.when(
+  Widget _buildUpdatedGrid(AsyncValue<List<MangaModel>> updatedManga, BuildContext context) {
+    return updatedManga.when(
       data: (list) => SliverPadding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
         sliver: SliverGrid(
@@ -119,7 +108,7 @@ class HomeScreen extends ConsumerWidget {
           delegate: SliverChildBuilderDelegate(
             (context, index) => MangaCard(
               manga: list[index],
-              onTap: () => context.push('/manga/${list[index].slug}'),
+              onTap: () => context.push('/manga/${list[index].id}'),
             ),
             childCount: list.length,
           ),
@@ -133,6 +122,20 @@ class HomeScreen extends ConsumerWidget {
       ),
       error: (e, s) => SliverToBoxAdapter(
         child: Center(child: Text('Lỗi: $e')),
+      ),
+    );
+  }
+
+  Widget _buildLoadMoreButton(WidgetRef ref) {
+    return SliverToBoxAdapter(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 24),
+        child: Center(
+          child: OutlinedButton(
+            onPressed: () => ref.read(updatedMangaProvider.notifier).loadMore(),
+            child: const Text('Xem thêm'),
+          ),
+        ),
       ),
     );
   }

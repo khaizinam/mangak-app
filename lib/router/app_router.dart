@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../features/auth/presentation/screens/login_screen.dart';
@@ -37,18 +36,18 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const RegisterScreen(),
       ),
       GoRoute(
-        path: '/manga/:slug',
+        path: '/manga/:id',
         builder: (context, state) {
-          final slug = state.pathParameters['slug']!;
-          return MangaDetailScreen(slug: slug);
+          final id = state.pathParameters['id']!;
+          return MangaDetailScreen(id: id);
         },
       ),
       GoRoute(
-        path: '/manga/:slug/chapter/:chapterId',
+        path: '/manga/:id/chapter/:chapterId',
         builder: (context, state) {
-          final slug = state.pathParameters['slug']!;
-          final chapterId = int.parse(state.pathParameters['chapterId']!);
-          return ChapterReaderScreen(slug: slug, chapterId: chapterId);
+          final id = state.pathParameters['id']!;
+          final chapterId = state.pathParameters['chapterId']!;
+          return ChapterReaderScreen(id: id, chapterId: chapterId);
         },
       ),
     ],

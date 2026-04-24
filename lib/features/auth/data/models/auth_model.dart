@@ -18,12 +18,18 @@ class AuthResponse with _$AuthResponse {
 @freezed
 class UserProfile with _$UserProfile {
   const factory UserProfile({
-    required int id,
+    @JsonKey(readValue: _readId) required String id,
     required String name,
     required String email,
-    @JsonKey(name: 'avatar_url') String? avatarUrl,
+    @JsonKey(name: 'avatar') String? avatarUrl,
   }) = _UserProfile;
 
   factory UserProfile.fromJson(Map<String, dynamic> json) =>
       _$UserProfileFromJson(json);
+}
+
+Object? _readId(Map json, String key) {
+  final value = json[key];
+  if (value is int) return value.toString();
+  return value;
 }

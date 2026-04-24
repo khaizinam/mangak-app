@@ -1,0 +1,365 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1575,
+            "name": "Đại Tượng Vô Hình",
+            "slug": "dai-tuong-vo-hinh",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/dai-tuong-vo-hinh-thumb.jpg",
+            "status": "ongoing",
+            "views": 40541,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                },
+                {
+                    "id": 3,
+                    "name": "Adventure",
+                    "slug": "adventure"
+                },
+                {
+                    "id": 11,
+                    "name": "Drama",
+                    "slug": "drama"
+                },
+                {
+                    "id": 14,
+                    "name": "Fantasy",
+                    "slug": "fantasy"
+                },
+                {
+                    "id": 18,
+                    "name": "Horror",
+                    "slug": "horror"
+                },
+                {
+                    "id": 22,
+                    "name": "Manhua",
+                    "slug": "manhua"
+                },
+                {
+                    "id": 27,
+                    "name": "Mystery",
+                    "slug": "mystery"
+                },
+                {
+                    "id": 44,
+                    "name": "Supernatural",
+                    "slug": "supernatural"
+                },
+                {
+                    "id": 50,
+                    "name": "Truyện Màu",
+                    "slug": "truyen-mau"
+                },
+                {
+                    "id": 52,
+                    "name": "Webtoon",
+                    "slug": "webtoon"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Đại Tượng Vô Hình [Chap 552-554]",
+                    "chapter_name": "554",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-15 19:41:46"
+        },
+        {
+            "id": 691,
+            "name": "Vô Địch Bị Động Tạo Ra Tấn Sát Thương",
+            "slug": "vo-dich-bi-dong-tao-ra-tan-sat-thuong",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/vo-dich-bi-dong-tao-ra-tan-sat-thuong-thumb.jpg",
+            "status": "ongoing",
+            "views": 29300,
+            "category": [
+                {
+                    "id": 18,
+                    "name": "Horror",
+                    "slug": "horror"
+                },
+                {
+                    "id": 22,
+                    "name": "Manhua",
+                    "slug": "manhua"
+                },
+                {
+                    "id": 27,
+                    "name": "Mystery",
+                    "slug": "mystery"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Vô Địch Bị Động Tạo Ra Tấn Sát Thương [Chap 160-161]",
+                    "chapter_name": "161",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-09 14:39:07"
+        },
+        {
+            "id": 288,
+            "name": "Xuyên Không Tới Tu Tiên Giới Làm Trù Thần",
+            "slug": "xuyen-khong-toi-tu-tien-gioi-lam-tru-than",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/xuyen-khong-toi-tu-tien-gioi-lam-tru-than-thumb.jpg",
+            "status": "ongoing",
+            "views": 20474,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Xuyên Không Tới Tu Tiên Giới Làm Trù Thần [Chap 105-107]",
+                    "chapter_name": "107",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-20 19:18:22"
+        },
+        {
+            "id": 274,
+            "name": "Vĩ Nhân Kiếm",
+            "slug": "vi-nhan-kiem",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/vi-nhan-kiem-thumb.jpg",
+            "status": "ongoing",
+            "views": 17983,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Vĩ Nhân Kiếm [Chap 41]",
+                    "chapter_name": "41",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-03-31 13:35:17"
+        },
+        {
+            "id": 1579,
+            "name": "Chàng Rể Mạnh Nhất Lịch Sử",
+            "slug": "chang-re-manh-nhat-lich-su",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/chang-re-manh-nhat-lich-su-thumb.jpg",
+            "status": "ongoing",
+            "views": 16219,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                },
+                {
+                    "id": 3,
+                    "name": "Adventure",
+                    "slug": "adventure"
+                },
+                {
+                    "id": 22,
+                    "name": "Manhua",
+                    "slug": "manhua"
+                },
+                {
+                    "id": 27,
+                    "name": "Mystery",
+                    "slug": "mystery"
+                },
+                {
+                    "id": 50,
+                    "name": "Truyện Màu",
+                    "slug": "truyen-mau"
+                },
+                {
+                    "id": 53,
+                    "name": "Xuyên Không",
+                    "slug": "xuyen-khong"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Chàng Rể Mạnh Nhất Lịch Sử [Chap 395]",
+                    "chapter_name": "395",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-20 18:31:56"
+        },
+        {
+            "id": 1505,
+            "name": "Xuyên Thành Tiểu Muội Của Đại Lão Giấu Mặt",
+            "slug": "xuyen-thanh-tieu-muoi-cua-dai-lao-giau-mat",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/xuyen-thanh-tieu-muoi-cua-dai-lao-giau-mat-thumb.jpg",
+            "status": "ongoing",
+            "views": 13684,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Xuyên Thành Tiểu Muội Của Đại Lão Giấu Mặt [Chap 108-109]",
+                    "chapter_name": "109",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-20 19:18:30"
+        },
+        {
+            "id": 1524,
+            "name": "Ta Có Một Sơn Trại",
+            "slug": "ta-co-mot-son-trai",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/ta-co-mot-son-trai-thumb.jpg",
+            "status": "ongoing",
+            "views": 12929,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                },
+                {
+                    "id": 5,
+                    "name": "Chuyển Sinh",
+                    "slug": "chuyen-sinh"
+                },
+                {
+                    "id": 14,
+                    "name": "Fantasy",
+                    "slug": "fantasy"
+                },
+                {
+                    "id": 22,
+                    "name": "Manhua",
+                    "slug": "manhua"
+                },
+                {
+                    "id": 50,
+                    "name": "Truyện Màu",
+                    "slug": "truyen-mau"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Ta Có Một Sơn Trại [Chap 1273]",
+                    "chapter_name": "1273",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-01-15 19:02:53"
+        },
+        {
+            "id": 162,
+            "name": "Vạn Cổ Chí Tôn",
+            "slug": "van-co-chi-ton",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/van-co-chi-ton-thumb.jpg",
+            "status": "ongoing",
+            "views": 9202,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                },
+                {
+                    "id": 5,
+                    "name": "Chuyển Sinh",
+                    "slug": "chuyen-sinh"
+                },
+                {
+                    "id": 22,
+                    "name": "Manhua",
+                    "slug": "manhua"
+                },
+                {
+                    "id": 27,
+                    "name": "Mystery",
+                    "slug": "mystery"
+                },
+                {
+                    "id": 50,
+                    "name": "Truyện Màu",
+                    "slug": "truyen-mau"
+                },
+                {
+                    "id": 53,
+                    "name": "Xuyên Không",
+                    "slug": "xuyen-khong"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Vạn Cổ Chí Tôn [Chap 509-512]",
+                    "chapter_name": "512",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-03-23 14:40:17"
+        },
+        {
+            "id": 84,
+            "name": "Vưu Vật",
+            "slug": "vuu-vat",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/vuu-vat-thumb.jpg",
+            "status": "coming_soon",
+            "views": 6475,
+            "category": [
+                {
+                    "id": 22,
+                    "name": "Manhua",
+                    "slug": "manhua"
+                },
+                {
+                    "id": 28,
+                    "name": "Ngôn Tình",
+                    "slug": "ngon-tinh"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Vưu Vật [Chap 186]",
+                    "chapter_name": "186",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-04-09 14:39:26"
+        },
+        {
+            "id": 248,
+            "name": "Xuyên Thành Phù Thủy Nuôi Dưỡng Kỵ Sĩ Thánh Điện",
+            "slug": "xuyen-thanh-phu-thuy-nuoi-duong-ky-si-thanh-dien",
+            "thumb_url": "https://img.otruyenapi.com/uploads/comics/xuyen-thanh-phu-thuy-nuoi-duong-ky-si-thanh-dien-thumb.jpg",
+            "status": "ongoing",
+            "views": 5826,
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Action",
+                    "slug": "action"
+                }
+            ],
+            "chaptersLatest": [
+                {
+                    "filename": "Xuyên Thành Phù Thủy Nuôi Dưỡng Kỵ Sĩ Thánh Điện [Chap 96]",
+                    "chapter_name": "96",
+                    "chapter_title": ""
+                }
+            ],
+            "updatedAt": "2026-03-03 12:43:09"
+        }
+    ]
+}

@@ -22,10 +22,10 @@ Map<String, dynamic> _$$AuthResponseImplToJson(_$AuthResponseImpl instance) =>
 
 _$UserProfileImpl _$$UserProfileImplFromJson(Map<String, dynamic> json) =>
     _$UserProfileImpl(
-      id: (json['id'] as num).toInt(),
+      id: _readId(json, 'id') as String,
       name: json['name'] as String,
       email: json['email'] as String,
-      avatarUrl: json['avatar_url'] as String?,
+      avatarUrl: json['avatar'] as String?,
     );
 
 Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) =>
@@ -33,5 +33,5 @@ Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'email': instance.email,
-      'avatar_url': instance.avatarUrl,
+      'avatar': instance.avatarUrl,
     };

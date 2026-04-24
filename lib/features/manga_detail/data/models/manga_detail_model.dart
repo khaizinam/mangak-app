@@ -1,6 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:social_network/features/home/data/models/manga_model.dart';
-
 
 part 'manga_detail_model.freezed.dart';
 part 'manga_detail_model.g.dart';
@@ -8,19 +6,24 @@ part 'manga_detail_model.g.dart';
 @freezed
 class MangaDetailModel with _$MangaDetailModel {
   const factory MangaDetailModel({
-    required int id,
-    required String title,
+    @JsonKey(readValue: _readId) required String id,
+    required String name,
     required String slug,
-    @JsonKey(name: 'cover_url') required String coverUrl,
-    required String description,
-    required String author,
+    @JsonKey(name: 'thumb_url') required String thumbUrl,
+    @JsonKey(name: 'origin_name') String? originName,
     required String status,
-    required List<String> genres,
-    required int views,
-    required int follows,
-    required double rating,
-    @JsonKey(name: 'chapters') required List<ChapterModel> chapters,
-    @JsonKey(name: 'is_followed') @Default(false) bool isFollowed,
+    @JsonKey(readValue: _readId) String? views,
+    String? description,
+    @JsonKey(name: 'total_chapters', readValue: _readId) String? totalChapters,
+    @Default([]) List<String> author,
+    @Default([]) List<DetailCategoryModel> category,
+    @JsonKey(name: 'chaptersLatest') @Default([]) List<DetailChapterLatestModel> chaptersLatest,
+    @JsonKey(name: 'updatedAt') String? updatedAt,
+    // Non-API fields with defaults (user interaction state)
+    @Default(false) bool isFollowed,
+    @Default(false) bool isLiked,
+    @Default(0) int follows,
+    @Default(0) int likes,
   }) = _MangaDetailModel;
 
   factory MangaDetailModel.fromJson(Map<String, dynamic> json) =>
@@ -28,15 +31,51 @@ class MangaDetailModel with _$MangaDetailModel {
 }
 
 @freezed
+class DetailCategoryModel with _$DetailCategoryModel {
+  const factory DetailCategoryModel({
+    @JsonKey(readValue: _readId) required String id,
+    required String name,
+    required String slug,
+  }) = _DetailCategoryModel;
+
+  factory DetailCategoryModel.fromJson(Map<String, dynamic> json) =>
+      _$DetailCategoryModelFromJson(json);
+}
+
+@freezed
+class DetailChapterLatestModel with _$DetailChapterLatestModel {
+  const factory DetailChapterLatestModel({
+    @JsonKey(name: 'chapter_name') String? chapterName,
+    @JsonKey(name: 'chapter_title') String? chapterTitle,
+    String? filename,
+  }) = _DetailChapterLatestModel;
+
+  factory DetailChapterLatestModel.fromJson(Map<String, dynamic> json) =>
+      _$DetailChapterLatestModelFromJson(json);
+}
+
+/// Simplified chapter model matching the /chapters API response: {id, name}
+@freezed
 class ChapterModel with _$ChapterModel {
   const factory ChapterModel({
-    required int id,
-    @JsonKey(name: 'chapter_number') required String chapterNumber,
-    required String title,
-    @JsonKey(name: 'created_at') required String createdAt,
-    @JsonKey(name: 'is_read') @Default(false) bool isRead,
+    @JsonKey(readValue: _readId) required String id,
+    required String name,
   }) = _ChapterModel;
 
   factory ChapterModel.fromJson(Map<String, dynamic> json) =>
       _$ChapterModelFromJson(json);
+}
+
+/// Holds a page of chapters + whether there are more pages
+class ChapterListResult {
+  final List<ChapterModel> chapters;
+  final bool hasMore;
+
+  const ChapterListResult({required this.chapters, required this.hasMore});
+}
+
+Object? _readId(Map json, String key) {
+  final value = json[key];
+  if (value is int) return value.toString();
+  return value;
 }

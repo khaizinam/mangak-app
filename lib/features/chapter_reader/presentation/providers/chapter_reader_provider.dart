@@ -9,7 +9,7 @@ final chapterReaderRepositoryProvider = Provider<ChapterReaderRepository>((ref) 
   return ChapterReaderRepositoryImpl(dioClient.dio);
 });
 
-final chapterPagesProvider = FutureProvider.family<ChapterPagesModel, int>((ref, chapterId) async {
+final chapterPagesProvider = FutureProvider.family<ChapterPagesModel, String>((ref, chapterId) async {
   final repository = ref.watch(chapterReaderRepositoryProvider);
   final pages = await repository.getChapterPages(chapterId);
   // Auto mark as read

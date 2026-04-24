@@ -1,9 +1,11 @@
+import 'dart:async';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:dio/dio.dart';
 import '../../data/models/auth_model.dart';
 import '../../data/repositories/auth_repository_impl.dart';
 import '../../domain/repositories/auth_repository.dart';
 import '../../../../core/network/dio_provider.dart';
+import '../../../../core/events/auth_events.dart';
 
 class AuthState {
   final bool isLoggedIn;
@@ -40,6 +42,21 @@ class AuthNotifier extends StateNotifier<AuthState> {
 
   AuthNotifier(this._repository, this.ref) : super(AuthState()) {
     checkAuthStatus();
+    
+    // Listen for global logout events from JwtInterceptor
+    _logoutSubscription = authLogoutController.stream.listen((_) {
+      if (state.isLoggedIn) {
+        logout();
+      }
+    });
+  }
+
+  late final StreamSubscription<void> _logoutSubscription;
+
+  @override
+  void dispose() {
+    _logoutSubscription.cancel();
+    super.dispose();
   }
 
   Future<void> checkAuthStatus() async {

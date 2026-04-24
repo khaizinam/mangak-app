@@ -11,13 +11,13 @@ class ChapterReaderRepositoryImpl implements ChapterReaderRepository {
   ChapterReaderRepositoryImpl(this._dio);
 
   @override
-  Future<ChapterPagesModel> getChapterPages(int chapterId) async {
-    final response = await _dio.get('${ApiConstants.chapter}/$chapterId');
+  Future<ChapterPagesModel> getChapterPages(String chapterId) async {
+    final response = await _dio.get('${ApiConstants.chapterDetail}/$chapterId');
     return ChapterPagesModel.fromJson(response.data['data'] ?? response.data);
   }
 
   @override
-  Future<void> markAsRead(int chapterId) async {
-    await _dio.post('${ApiConstants.chapter}/$chapterId/read');
+  Future<void> markAsRead(String chapterId) async {
+    await _dio.post('${ApiConstants.chapterDetail}/$chapterId/read');
   }
 }

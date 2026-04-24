@@ -13,14 +13,45 @@ final hotMangaProvider = FutureProvider<List<MangaModel>>((ref) async {
   return ref.watch(homeRepositoryProvider).getMangaList(sort: 'popular', limit: 10);
 });
 
-final updatedMangaProvider = FutureProvider<List<MangaModel>>((ref) async {
-  return ref.watch(homeRepositoryProvider).getMangaList(sort: 'updated', limit: 10);
+final featuredSectionsProvider = FutureProvider<List<FeaturedSectionModel>>((ref) async {
+  return ref.watch(homeRepositoryProvider).getFeaturedSections();
 });
 
-final categoriesProvider = FutureProvider<List<CategoryModel>>((ref) async {
-  return ref.watch(homeRepositoryProvider).getCategories();
-});
+class UpdatedMangaNotifier extends StateNotifier<AsyncValue<List<MangaModel>>> {
+  final HomeRepository _repository;
+  int _currentPage = 1;
+  bool _isFetching = false;
 
-final recommendedMangaProvider = FutureProvider<List<MangaModel>>((ref) async {
-  return ref.watch(homeRepositoryProvider).getMangaList(sort: 'recommend', limit: 20);
+  UpdatedMangaNotifier(this._repository) : super(const AsyncValue.loading()) {
+    loadFirstPage();
+  }
+
+  Future<void> loadFirstPage() async {
+    _currentPage = 1;
+    state = const AsyncValue.loading();
+    try {
+      final list = await _repository.getMangaList(sort: 'updated', limit: 20, page: _currentPage);
+      state = AsyncValue.data(list);
+    } catch (e, s) {
+      state = AsyncValue.error(e, s);
+    }
+  }
+
+  Future<void> loadMore() async {
+    if (_isFetching) return;
+    _isFetching = true;
+    _currentPage++;
+    try {
+      final list = await _repository.getMangaList(sort: 'updated', limit: 20, page: _currentPage);
+      state = AsyncValue.data([...state.value ?? [], ...list]);
+    } catch (e) {
+      // Don't set error state to avoid losing existing data
+    } finally {
+      _isFetching = false;
+    }
+  }
+}
+
+final updatedMangaProvider = StateNotifierProvider<UpdatedMangaNotifier, AsyncValue<List<MangaModel>>>((ref) {
+  return UpdatedMangaNotifier(ref.watch(homeRepositoryProvider));
 });

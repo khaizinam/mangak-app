@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '../providers/auth_provider.dart';
 
 class RegisterScreen extends HookConsumerWidget {
@@ -8,6 +9,18 @@ class RegisterScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen<AuthState>(authProvider, (previous, next) {
+      if (next.error != null && next.error != previous?.error) {
+        Fluttertoast.showToast(
+          msg: "Bị lỗi. Vui lòng thử lại sau.",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+        );
+      }
+    });
+
     final usernameController = useTextEditingController();
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
@@ -81,14 +94,6 @@ class RegisterScreen extends HookConsumerWidget {
                   ? const CircularProgressIndicator()
                   : const Text('Đăng ký'),
             ),
-            if (authState.error != null) ...[
-              const SizedBox(height: 16),
-              Text(
-                authState.error!,
-                style: const TextStyle(color: Colors.red),
-                textAlign: TextAlign.center,
-              ),
-            ],
             const SizedBox(height: 16),
             TextButton(
               onPressed: () {

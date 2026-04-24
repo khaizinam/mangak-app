@@ -1,0 +1,31 @@
+{
+    "success": true,
+    "data": {
+        "id": 5958,
+        "name": "Quyến Rũ Cô Ấy",
+        "slug": "quyen-ru-co-ay",
+        "thumb_url": "https://img.otruyenapi.com/uploads/comics/quyen-ru-co-ay-thumb.jpg",
+        "origin_name": "QUYẾN RŨ CÔ ẤY",
+        "status": "ongoing",
+        "views": 293,
+        "daily_views": 0,
+        "author": [],
+        "description": "Truyện tranh Quyến Rũ Cô Ấy được cập nhật nhanh và đầy đủ nhất tại Mangak. Bạn đọc đừng quên để lại bình luận và chia sẻ, ủng hộ ra các chương mới nhất của truyện Quyến Rũ Cô Ấy.",
+        "total_chapters": 48,
+        "category": [
+            {
+                "id": 1,
+                "name": "Action",
+                "slug": "action"
+            }
+        ],
+        "chaptersLatest": [
+            {
+                "filename": "Quyến Rũ Cô Ấy [Chap 47]",
+                "chapter_name": "47",
+                "chapter_title": ""
+            }
+        ],
+        "updatedAt": "2026-04-23 16:59:11"
+    }
+}

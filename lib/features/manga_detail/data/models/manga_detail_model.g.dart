@@ -9,56 +9,98 @@ part of 'manga_detail_model.dart';
 _$MangaDetailModelImpl _$$MangaDetailModelImplFromJson(
         Map<String, dynamic> json) =>
     _$MangaDetailModelImpl(
-      id: (json['id'] as num).toInt(),
-      title: json['title'] as String,
+      id: _readId(json, 'id') as String,
+      name: json['name'] as String,
       slug: json['slug'] as String,
-      coverUrl: json['cover_url'] as String,
-      description: json['description'] as String,
-      author: json['author'] as String,
+      thumbUrl: json['thumb_url'] as String,
+      originName: json['origin_name'] as String?,
       status: json['status'] as String,
-      genres:
-          (json['genres'] as List<dynamic>).map((e) => e as String).toList(),
-      views: (json['views'] as num).toInt(),
-      follows: (json['follows'] as num).toInt(),
-      rating: (json['rating'] as num).toDouble(),
-      chapters: (json['chapters'] as List<dynamic>)
-          .map((e) => ChapterModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      isFollowed: json['is_followed'] as bool? ?? false,
+      views: _readId(json, 'views') as String?,
+      description: json['description'] as String?,
+      totalChapters: _readId(json, 'total_chapters') as String?,
+      author: (json['author'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      category: (json['category'] as List<dynamic>?)
+              ?.map((e) =>
+                  DetailCategoryModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      chaptersLatest: (json['chaptersLatest'] as List<dynamic>?)
+              ?.map((e) =>
+                  DetailChapterLatestModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      updatedAt: json['updatedAt'] as String?,
+      isFollowed: json['isFollowed'] as bool? ?? false,
+      isLiked: json['isLiked'] as bool? ?? false,
+      follows: (json['follows'] as num?)?.toInt() ?? 0,
+      likes: (json['likes'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$MangaDetailModelImplToJson(
         _$MangaDetailModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'title': instance.title,
+      'name': instance.name,
       'slug': instance.slug,
-      'cover_url': instance.coverUrl,
-      'description': instance.description,
-      'author': instance.author,
+      'thumb_url': instance.thumbUrl,
+      'origin_name': instance.originName,
       'status': instance.status,
-      'genres': instance.genres,
       'views': instance.views,
+      'description': instance.description,
+      'total_chapters': instance.totalChapters,
+      'author': instance.author,
+      'category': instance.category,
+      'chaptersLatest': instance.chaptersLatest,
+      'updatedAt': instance.updatedAt,
+      'isFollowed': instance.isFollowed,
+      'isLiked': instance.isLiked,
       'follows': instance.follows,
-      'rating': instance.rating,
-      'chapters': instance.chapters,
-      'is_followed': instance.isFollowed,
+      'likes': instance.likes,
+    };
+
+_$DetailCategoryModelImpl _$$DetailCategoryModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DetailCategoryModelImpl(
+      id: _readId(json, 'id') as String,
+      name: json['name'] as String,
+      slug: json['slug'] as String,
+    );
+
+Map<String, dynamic> _$$DetailCategoryModelImplToJson(
+        _$DetailCategoryModelImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'slug': instance.slug,
+    };
+
+_$DetailChapterLatestModelImpl _$$DetailChapterLatestModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DetailChapterLatestModelImpl(
+      chapterName: json['chapter_name'] as String?,
+      chapterTitle: json['chapter_title'] as String?,
+      filename: json['filename'] as String?,
+    );
+
+Map<String, dynamic> _$$DetailChapterLatestModelImplToJson(
+        _$DetailChapterLatestModelImpl instance) =>
+    <String, dynamic>{
+      'chapter_name': instance.chapterName,
+      'chapter_title': instance.chapterTitle,
+      'filename': instance.filename,
     };
 
 _$ChapterModelImpl _$$ChapterModelImplFromJson(Map<String, dynamic> json) =>
     _$ChapterModelImpl(
-      id: (json['id'] as num).toInt(),
-      chapterNumber: json['chapter_number'] as String,
-      title: json['title'] as String,
-      createdAt: json['created_at'] as String,
-      isRead: json['is_read'] as bool? ?? false,
+      id: _readId(json, 'id') as String,
+      name: json['name'] as String,
     );
 
 Map<String, dynamic> _$$ChapterModelImplToJson(_$ChapterModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'chapter_number': instance.chapterNumber,
-      'title': instance.title,
-      'created_at': instance.createdAt,
-      'is_read': instance.isRead,
+      'name': instance.name,
     };

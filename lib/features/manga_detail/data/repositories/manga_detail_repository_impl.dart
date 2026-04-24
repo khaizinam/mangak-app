@@ -4,26 +4,40 @@ import 'package:social_network/features/manga_detail/domain/repositories/manga_d
 import 'package:social_network/features/manga_detail/data/models/manga_detail_model.dart';
 
 
-
-
 class MangaDetailRepositoryImpl implements MangaDetailRepository {
   final Dio _dio;
 
   MangaDetailRepositoryImpl(this._dio);
 
   @override
-  Future<MangaDetailModel> getMangaDetail(String slug) async {
-    final response = await _dio.get('${ApiConstants.manga}/$slug');
-    return MangaDetailModel.fromJson(response.data['data'] ?? response.data);
+  Future<MangaDetailModel> getMangaDetail(String id) async {
+    final response = await _dio.get('${ApiConstants.storyDetail}/$id');
+    final responseData = response.data;
+    final detailData = responseData['data'] ?? responseData;
+    return MangaDetailModel.fromJson(detailData);
   }
 
   @override
-  Future<void> followManga(int mangaId) async {
-    await _dio.post('${ApiConstants.manga}/$mangaId/follow');
+  Future<ChapterListResult> getChapters(String id, {int page = 1}) async {
+    final response = await _dio.get(
+      '${ApiConstants.storyChapters}/$id',
+      queryParameters: {'page': page},
+    );
+    final responseData = response.data;
+    final List data = responseData['data'] ?? [];
+    final meta = responseData['meta']?['pagination'];
+    final hasMore = meta?['hasMore'] == true;
+    final chapters = data.map((j) => ChapterModel.fromJson(j)).toList();
+    return ChapterListResult(chapters: chapters, hasMore: hasMore);
   }
 
   @override
-  Future<void> unfollowManga(int mangaId) async {
-    await _dio.delete('${ApiConstants.manga}/$mangaId/follow');
+  Future<void> followManga(String id) async {
+    await _dio.post('${ApiConstants.stories}/$id/follow');
+  }
+
+  @override
+  Future<void> unfollowManga(String id) async {
+    await _dio.delete('${ApiConstants.stories}/$id/follow');
   }
 }
