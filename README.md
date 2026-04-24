@@ -1,10 +1,39 @@
 # social_network
 
-A new Flutter project.
+A new Flutter project for a Social Network.
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
+
+### Commands
+
+#### Run the project
+- Run on Chrome:
+  ```bash
+  flutter run -d chrome
+  ```
+- Run on Windows:
+  ```bash
+  flutter run -d windows
+  ```
+- Run on Android (Emulator/Device):
+  ```bash
+  flutter run -d <device_id>
+  ```
+
+#### Build and Install the project
+- Build APK:
+  ```bash
+  flutter build apk
+  ```
+- Install APK to device:
+  ```bash
+  flutter install
+  ```
+
+
+## Resources
 
 A few resources to get you started if this is your first Flutter project:
 
@@ -14,3 +43,4 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
