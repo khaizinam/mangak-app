@@ -11,7 +11,7 @@ class MangaDetailModel with _$MangaDetailModel {
     required String slug,
     @JsonKey(name: 'thumb_url') required String thumbUrl,
     @JsonKey(name: 'origin_name') String? originName,
-    required String status,
+    String? status,
     @JsonKey(readValue: _readId) String? views,
     String? description,
     @JsonKey(name: 'total_chapters', readValue: _readId) String? totalChapters,
@@ -19,9 +19,9 @@ class MangaDetailModel with _$MangaDetailModel {
     @Default([]) List<DetailCategoryModel> category,
     @JsonKey(name: 'chaptersLatest') @Default([]) List<DetailChapterLatestModel> chaptersLatest,
     @JsonKey(name: 'updatedAt') String? updatedAt,
-    // Non-API fields with defaults (user interaction state)
-    @Default(false) bool isFollowed,
-    @Default(false) bool isLiked,
+    @JsonKey(name: 'is_followed') @Default(false) bool isFollowed,
+    @JsonKey(name: 'is_liked') @Default(false) bool isLiked,
+    @JsonKey(name: 'last_read_at') LastReadModel? lastReadAt,
     @Default(0) int follows,
     @Default(0) int likes,
   }) = _MangaDetailModel;
@@ -31,11 +31,22 @@ class MangaDetailModel with _$MangaDetailModel {
 }
 
 @freezed
+class LastReadModel with _$LastReadModel {
+  const factory LastReadModel({
+    @JsonKey(readValue: _readId) String? id,
+    String? name,
+  }) = _LastReadModel;
+
+  factory LastReadModel.fromJson(Map<String, dynamic> json) =>
+      _$LastReadModelFromJson(json);
+}
+
+@freezed
 class DetailCategoryModel with _$DetailCategoryModel {
   const factory DetailCategoryModel({
-    @JsonKey(readValue: _readId) required String id,
-    required String name,
-    required String slug,
+    @JsonKey(readValue: _readId) String? id,
+    String? name,
+    String? slug,
   }) = _DetailCategoryModel;
 
   factory DetailCategoryModel.fromJson(Map<String, dynamic> json) =>
@@ -58,20 +69,12 @@ class DetailChapterLatestModel with _$DetailChapterLatestModel {
 @freezed
 class ChapterModel with _$ChapterModel {
   const factory ChapterModel({
-    @JsonKey(readValue: _readId) required String id,
-    required String name,
+    @JsonKey(readValue: _readId) String? id,
+    String? name,
   }) = _ChapterModel;
 
   factory ChapterModel.fromJson(Map<String, dynamic> json) =>
       _$ChapterModelFromJson(json);
-}
-
-/// Holds a page of chapters + whether there are more pages
-class ChapterListResult {
-  final List<ChapterModel> chapters;
-  final bool hasMore;
-
-  const ChapterListResult({required this.chapters, required this.hasMore});
 }
 
 Object? _readId(Map json, String key) {

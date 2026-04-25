@@ -6,13 +6,29 @@ part 'chapter_pages_model.g.dart';
 @freezed
 class ChapterPagesModel with _$ChapterPagesModel {
   const factory ChapterPagesModel({
-    required int id,
-    @JsonKey(name: 'chapter_number') required String chapterNumber,
+    @JsonKey(readValue: _readChapterId) required String id,
+    @JsonKey(name: 'chapterName', readValue: _readChapterName) required String chapterName,
+    @JsonKey(name: 'storyId', readValue: _readStoryId) required String storyId,
+    @JsonKey(name: 'storyName', readValue: _readStoryName) required String storyName,
     required List<String> images,
-    @JsonKey(name: 'next_chapter_id') int? nextChapterId,
-    @JsonKey(name: 'prev_chapter_id') int? prevChapterId,
   }) = _ChapterPagesModel;
 
   factory ChapterPagesModel.fromJson(Map<String, dynamic> json) =>
       _$ChapterPagesModelFromJson(json);
+}
+
+Object? _readChapterId(Map json, String key) {
+  return json['chapter']?['id']?.toString();
+}
+
+Object? _readChapterName(Map json, String key) {
+  return json['chapter']?['chapter_name']?.toString();
+}
+
+Object? _readStoryId(Map json, String key) {
+  return json['story']?['id']?.toString();
+}
+
+Object? _readStoryName(Map json, String key) {
+  return json['story']?['name']?.toString();
 }

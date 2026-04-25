@@ -10,7 +10,7 @@ final homeRepositoryProvider = Provider<HomeRepository>((ref) {
 });
 
 final hotMangaProvider = FutureProvider<List<MangaModel>>((ref) async {
-  return ref.watch(homeRepositoryProvider).getMangaList(sort: 'popular', limit: 10);
+  return ref.watch(homeRepositoryProvider).getMangaList();
 });
 
 final featuredSectionsProvider = FutureProvider<List<FeaturedSectionModel>>((ref) async {
@@ -30,7 +30,7 @@ class UpdatedMangaNotifier extends StateNotifier<AsyncValue<List<MangaModel>>> {
     _currentPage = 1;
     state = const AsyncValue.loading();
     try {
-      final list = await _repository.getMangaList(sort: 'updated', limit: 20, page: _currentPage);
+      final list = await _repository.getMangaList(page: _currentPage);
       state = AsyncValue.data(list);
     } catch (e, s) {
       state = AsyncValue.error(e, s);
@@ -42,7 +42,7 @@ class UpdatedMangaNotifier extends StateNotifier<AsyncValue<List<MangaModel>>> {
     _isFetching = true;
     _currentPage++;
     try {
-      final list = await _repository.getMangaList(sort: 'updated', limit: 20, page: _currentPage);
+      final list = await _repository.getMangaList(page: _currentPage);
       state = AsyncValue.data([...state.value ?? [], ...list]);
     } catch (e) {
       // Don't set error state to avoid losing existing data

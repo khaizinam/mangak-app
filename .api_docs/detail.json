@@ -1,31 +1,75 @@
 {
     "success": true,
     "data": {
-        "id": 5958,
-        "name": "Quyến Rũ Cô Ấy",
-        "slug": "quyen-ru-co-ay",
-        "thumb_url": "https://img.otruyenapi.com/uploads/comics/quyen-ru-co-ay-thumb.jpg",
-        "origin_name": "QUYẾN RŨ CÔ ẤY",
-        "status": "ongoing",
-        "views": 293,
-        "daily_views": 0,
-        "author": [],
-        "description": "Truyện tranh Quyến Rũ Cô Ấy được cập nhật nhanh và đầy đủ nhất tại Mangak. Bạn đọc đừng quên để lại bình luận và chia sẻ, ủng hộ ra các chương mới nhất của truyện Quyến Rũ Cô Ấy.",
-        "total_chapters": 48,
-        "category": [
-            {
-                "id": 1,
-                "name": "Action",
-                "slug": "action"
-            }
-        ],
-        "chaptersLatest": [
-            {
-                "filename": "Quyến Rũ Cô Ấy [Chap 47]",
-                "chapter_name": "47",
-                "chapter_title": ""
-            }
-        ],
-        "updatedAt": "2026-04-23 16:59:11"
+        "story": {
+            "id": 5958,
+            "name": "Quyến Rũ Cô Ấy"
+        },
+        "chapter": {
+            "id": 354989,
+            "chapter_name": "47"
+        },
+        "images": [
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_0.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_1.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_2.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_3.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_4.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_5.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_6.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_7.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_8.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_9.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_10.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_11.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_12.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_13.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_14.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_15.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_16.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_17.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_18.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_19.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_20.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_21.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_22.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_23.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_24.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_25.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_26.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_27.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_28.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_29.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_30.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_31.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_32.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_33.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_34.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_35.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_36.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_37.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_38.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_39.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_40.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_41.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_42.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_43.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_44.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_45.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_46.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_47.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_48.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_49.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_50.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_51.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_52.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_53.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_54.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_55.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_56.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_57.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_58.jpg",
+            "https://sv1.otruyencdn.com/uploads/20260423/fe580a043a5f8234252cd83e3316c3dd/chapter_47/page_59.jpg"
+        ]
     }
 }

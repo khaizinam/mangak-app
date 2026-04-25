@@ -28,7 +28,7 @@ mixin _$MangaModel {
   String get thumbUrl => throw _privateConstructorUsedError;
   @JsonKey(readValue: _readTotalChapters, name: 'total_chapters')
   String? get totalChapters => throw _privateConstructorUsedError;
-  @JsonKey(name: 'updated_at')
+  @JsonKey(name: 'updatedAt')
   String? get updatedAt => throw _privateConstructorUsedError;
   List<String>? get author => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
@@ -62,7 +62,7 @@ abstract class $MangaModelCopyWith<$Res> {
       @JsonKey(name: 'thumb_url') String thumbUrl,
       @JsonKey(readValue: _readTotalChapters, name: 'total_chapters')
       String? totalChapters,
-      @JsonKey(name: 'updated_at') String? updatedAt,
+      @JsonKey(name: 'updatedAt') String? updatedAt,
       List<String>? author,
       String? status,
       @JsonKey(readValue: _readId) String? views,
@@ -162,7 +162,7 @@ abstract class _$$MangaModelImplCopyWith<$Res>
       @JsonKey(name: 'thumb_url') String thumbUrl,
       @JsonKey(readValue: _readTotalChapters, name: 'total_chapters')
       String? totalChapters,
-      @JsonKey(name: 'updated_at') String? updatedAt,
+      @JsonKey(name: 'updatedAt') String? updatedAt,
       List<String>? author,
       String? status,
       @JsonKey(readValue: _readId) String? views,
@@ -255,7 +255,7 @@ class _$MangaModelImpl implements _MangaModel {
       @JsonKey(name: 'thumb_url') required this.thumbUrl,
       @JsonKey(readValue: _readTotalChapters, name: 'total_chapters')
       this.totalChapters,
-      @JsonKey(name: 'updated_at') this.updatedAt,
+      @JsonKey(name: 'updatedAt') this.updatedAt,
       final List<String>? author,
       this.status,
       @JsonKey(readValue: _readId) this.views,
@@ -282,7 +282,7 @@ class _$MangaModelImpl implements _MangaModel {
   @JsonKey(readValue: _readTotalChapters, name: 'total_chapters')
   final String? totalChapters;
   @override
-  @JsonKey(name: 'updated_at')
+  @JsonKey(name: 'updatedAt')
   final String? updatedAt;
   final List<String>? _author;
   @override
@@ -380,7 +380,7 @@ abstract class _MangaModel implements MangaModel {
       @JsonKey(name: 'thumb_url') required final String thumbUrl,
       @JsonKey(readValue: _readTotalChapters, name: 'total_chapters')
       final String? totalChapters,
-      @JsonKey(name: 'updated_at') final String? updatedAt,
+      @JsonKey(name: 'updatedAt') final String? updatedAt,
       final List<String>? author,
       final String? status,
       @JsonKey(readValue: _readId) final String? views,
@@ -405,7 +405,7 @@ abstract class _MangaModel implements MangaModel {
   @JsonKey(readValue: _readTotalChapters, name: 'total_chapters')
   String? get totalChapters;
   @override
-  @JsonKey(name: 'updated_at')
+  @JsonKey(name: 'updatedAt')
   String? get updatedAt;
   @override
   List<String>? get author;
@@ -669,7 +669,7 @@ mixin _$CategoryModel {
   @JsonKey(readValue: _readId)
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get slug => throw _privateConstructorUsedError;
+  String? get slug => throw _privateConstructorUsedError;
 
   /// Serializes this CategoryModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -687,7 +687,8 @@ abstract class $CategoryModelCopyWith<$Res> {
           CategoryModel value, $Res Function(CategoryModel) then) =
       _$CategoryModelCopyWithImpl<$Res, CategoryModel>;
   @useResult
-  $Res call({@JsonKey(readValue: _readId) String id, String name, String slug});
+  $Res call(
+      {@JsonKey(readValue: _readId) String id, String name, String? slug});
 }
 
 /// @nodoc
@@ -707,7 +708,7 @@ class _$CategoryModelCopyWithImpl<$Res, $Val extends CategoryModel>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? slug = null,
+    Object? slug = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -718,10 +719,10 @@ class _$CategoryModelCopyWithImpl<$Res, $Val extends CategoryModel>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      slug: null == slug
+      slug: freezed == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -734,7 +735,8 @@ abstract class _$$CategoryModelImplCopyWith<$Res>
       __$$CategoryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(readValue: _readId) String id, String name, String slug});
+  $Res call(
+      {@JsonKey(readValue: _readId) String id, String name, String? slug});
 }
 
 /// @nodoc
@@ -752,7 +754,7 @@ class __$$CategoryModelImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? slug = null,
+    Object? slug = freezed,
   }) {
     return _then(_$CategoryModelImpl(
       id: null == id
@@ -763,10 +765,10 @@ class __$$CategoryModelImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      slug: null == slug
+      slug: freezed == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -777,7 +779,7 @@ class _$CategoryModelImpl implements _CategoryModel {
   const _$CategoryModelImpl(
       {@JsonKey(readValue: _readId) required this.id,
       required this.name,
-      required this.slug});
+      this.slug});
 
   factory _$CategoryModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CategoryModelImplFromJson(json);
@@ -788,7 +790,7 @@ class _$CategoryModelImpl implements _CategoryModel {
   @override
   final String name;
   @override
-  final String slug;
+  final String? slug;
 
   @override
   String toString() {
@@ -829,7 +831,7 @@ abstract class _CategoryModel implements CategoryModel {
   const factory _CategoryModel(
       {@JsonKey(readValue: _readId) required final String id,
       required final String name,
-      required final String slug}) = _$CategoryModelImpl;
+      final String? slug}) = _$CategoryModelImpl;
 
   factory _CategoryModel.fromJson(Map<String, dynamic> json) =
       _$CategoryModelImpl.fromJson;
@@ -840,7 +842,7 @@ abstract class _CategoryModel implements CategoryModel {
   @override
   String get name;
   @override
-  String get slug;
+  String? get slug;
 
   /// Create a copy of CategoryModel
   /// with the given fields replaced by the non-null parameter values.

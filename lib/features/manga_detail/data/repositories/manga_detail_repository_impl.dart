@@ -18,17 +18,11 @@ class MangaDetailRepositoryImpl implements MangaDetailRepository {
   }
 
   @override
-  Future<ChapterListResult> getChapters(String id, {int page = 1}) async {
-    final response = await _dio.get(
-      '${ApiConstants.storyChapters}/$id',
-      queryParameters: {'page': page},
-    );
+  Future<List<ChapterModel>> getChapters(String id) async {
+    final response = await _dio.get('${ApiConstants.storyChapters}/$id');
     final responseData = response.data;
     final List data = responseData['data'] ?? [];
-    final meta = responseData['meta']?['pagination'];
-    final hasMore = meta?['hasMore'] == true;
-    final chapters = data.map((j) => ChapterModel.fromJson(j)).toList();
-    return ChapterListResult(chapters: chapters, hasMore: hasMore);
+    return data.map((j) => ChapterModel.fromJson(j)).toList();
   }
 
   @override

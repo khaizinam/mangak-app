@@ -20,14 +20,15 @@ ChapterPagesModel _$ChapterPagesModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ChapterPagesModel {
-  int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'chapter_number')
-  String get chapterNumber => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _readChapterId)
+  String get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'chapterName', readValue: _readChapterName)
+  String get chapterName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'storyId', readValue: _readStoryId)
+  String get storyId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'storyName', readValue: _readStoryName)
+  String get storyName => throw _privateConstructorUsedError;
   List<String> get images => throw _privateConstructorUsedError;
-  @JsonKey(name: 'next_chapter_id')
-  int? get nextChapterId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'prev_chapter_id')
-  int? get prevChapterId => throw _privateConstructorUsedError;
 
   /// Serializes this ChapterPagesModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,11 +47,12 @@ abstract class $ChapterPagesModelCopyWith<$Res> {
       _$ChapterPagesModelCopyWithImpl<$Res, ChapterPagesModel>;
   @useResult
   $Res call(
-      {int id,
-      @JsonKey(name: 'chapter_number') String chapterNumber,
-      List<String> images,
-      @JsonKey(name: 'next_chapter_id') int? nextChapterId,
-      @JsonKey(name: 'prev_chapter_id') int? prevChapterId});
+      {@JsonKey(readValue: _readChapterId) String id,
+      @JsonKey(name: 'chapterName', readValue: _readChapterName)
+      String chapterName,
+      @JsonKey(name: 'storyId', readValue: _readStoryId) String storyId,
+      @JsonKey(name: 'storyName', readValue: _readStoryName) String storyName,
+      List<String> images});
 }
 
 /// @nodoc
@@ -69,32 +71,32 @@ class _$ChapterPagesModelCopyWithImpl<$Res, $Val extends ChapterPagesModel>
   @override
   $Res call({
     Object? id = null,
-    Object? chapterNumber = null,
+    Object? chapterName = null,
+    Object? storyId = null,
+    Object? storyName = null,
     Object? images = null,
-    Object? nextChapterId = freezed,
-    Object? prevChapterId = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      chapterNumber: null == chapterNumber
-          ? _value.chapterNumber
-          : chapterNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      chapterName: null == chapterName
+          ? _value.chapterName
+          : chapterName // ignore: cast_nullable_to_non_nullable
+              as String,
+      storyId: null == storyId
+          ? _value.storyId
+          : storyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      storyName: null == storyName
+          ? _value.storyName
+          : storyName // ignore: cast_nullable_to_non_nullable
               as String,
       images: null == images
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      nextChapterId: freezed == nextChapterId
-          ? _value.nextChapterId
-          : nextChapterId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      prevChapterId: freezed == prevChapterId
-          ? _value.prevChapterId
-          : prevChapterId // ignore: cast_nullable_to_non_nullable
-              as int?,
     ) as $Val);
   }
 }
@@ -108,11 +110,12 @@ abstract class _$$ChapterPagesModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
-      @JsonKey(name: 'chapter_number') String chapterNumber,
-      List<String> images,
-      @JsonKey(name: 'next_chapter_id') int? nextChapterId,
-      @JsonKey(name: 'prev_chapter_id') int? prevChapterId});
+      {@JsonKey(readValue: _readChapterId) String id,
+      @JsonKey(name: 'chapterName', readValue: _readChapterName)
+      String chapterName,
+      @JsonKey(name: 'storyId', readValue: _readStoryId) String storyId,
+      @JsonKey(name: 'storyName', readValue: _readStoryName) String storyName,
+      List<String> images});
 }
 
 /// @nodoc
@@ -129,32 +132,32 @@ class __$$ChapterPagesModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? chapterNumber = null,
+    Object? chapterName = null,
+    Object? storyId = null,
+    Object? storyName = null,
     Object? images = null,
-    Object? nextChapterId = freezed,
-    Object? prevChapterId = freezed,
   }) {
     return _then(_$ChapterPagesModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      chapterNumber: null == chapterNumber
-          ? _value.chapterNumber
-          : chapterNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      chapterName: null == chapterName
+          ? _value.chapterName
+          : chapterName // ignore: cast_nullable_to_non_nullable
+              as String,
+      storyId: null == storyId
+          ? _value.storyId
+          : storyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      storyName: null == storyName
+          ? _value.storyName
+          : storyName // ignore: cast_nullable_to_non_nullable
               as String,
       images: null == images
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      nextChapterId: freezed == nextChapterId
-          ? _value.nextChapterId
-          : nextChapterId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      prevChapterId: freezed == prevChapterId
-          ? _value.prevChapterId
-          : prevChapterId // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
@@ -163,21 +166,30 @@ class __$$ChapterPagesModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ChapterPagesModelImpl implements _ChapterPagesModel {
   const _$ChapterPagesModelImpl(
-      {required this.id,
-      @JsonKey(name: 'chapter_number') required this.chapterNumber,
-      required final List<String> images,
-      @JsonKey(name: 'next_chapter_id') this.nextChapterId,
-      @JsonKey(name: 'prev_chapter_id') this.prevChapterId})
+      {@JsonKey(readValue: _readChapterId) required this.id,
+      @JsonKey(name: 'chapterName', readValue: _readChapterName)
+      required this.chapterName,
+      @JsonKey(name: 'storyId', readValue: _readStoryId) required this.storyId,
+      @JsonKey(name: 'storyName', readValue: _readStoryName)
+      required this.storyName,
+      required final List<String> images})
       : _images = images;
 
   factory _$ChapterPagesModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ChapterPagesModelImplFromJson(json);
 
   @override
-  final int id;
+  @JsonKey(readValue: _readChapterId)
+  final String id;
   @override
-  @JsonKey(name: 'chapter_number')
-  final String chapterNumber;
+  @JsonKey(name: 'chapterName', readValue: _readChapterName)
+  final String chapterName;
+  @override
+  @JsonKey(name: 'storyId', readValue: _readStoryId)
+  final String storyId;
+  @override
+  @JsonKey(name: 'storyName', readValue: _readStoryName)
+  final String storyName;
   final List<String> _images;
   @override
   List<String> get images {
@@ -187,15 +199,8 @@ class _$ChapterPagesModelImpl implements _ChapterPagesModel {
   }
 
   @override
-  @JsonKey(name: 'next_chapter_id')
-  final int? nextChapterId;
-  @override
-  @JsonKey(name: 'prev_chapter_id')
-  final int? prevChapterId;
-
-  @override
   String toString() {
-    return 'ChapterPagesModel(id: $id, chapterNumber: $chapterNumber, images: $images, nextChapterId: $nextChapterId, prevChapterId: $prevChapterId)';
+    return 'ChapterPagesModel(id: $id, chapterName: $chapterName, storyId: $storyId, storyName: $storyName, images: $images)';
   }
 
   @override
@@ -204,24 +209,18 @@ class _$ChapterPagesModelImpl implements _ChapterPagesModel {
         (other.runtimeType == runtimeType &&
             other is _$ChapterPagesModelImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.chapterNumber, chapterNumber) ||
-                other.chapterNumber == chapterNumber) &&
-            const DeepCollectionEquality().equals(other._images, _images) &&
-            (identical(other.nextChapterId, nextChapterId) ||
-                other.nextChapterId == nextChapterId) &&
-            (identical(other.prevChapterId, prevChapterId) ||
-                other.prevChapterId == prevChapterId));
+            (identical(other.chapterName, chapterName) ||
+                other.chapterName == chapterName) &&
+            (identical(other.storyId, storyId) || other.storyId == storyId) &&
+            (identical(other.storyName, storyName) ||
+                other.storyName == storyName) &&
+            const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      chapterNumber,
-      const DeepCollectionEquality().hash(_images),
-      nextChapterId,
-      prevChapterId);
+  int get hashCode => Object.hash(runtimeType, id, chapterName, storyId,
+      storyName, const DeepCollectionEquality().hash(_images));
 
   /// Create a copy of ChapterPagesModel
   /// with the given fields replaced by the non-null parameter values.
@@ -242,29 +241,32 @@ class _$ChapterPagesModelImpl implements _ChapterPagesModel {
 
 abstract class _ChapterPagesModel implements ChapterPagesModel {
   const factory _ChapterPagesModel(
-          {required final int id,
-          @JsonKey(name: 'chapter_number') required final String chapterNumber,
-          required final List<String> images,
-          @JsonKey(name: 'next_chapter_id') final int? nextChapterId,
-          @JsonKey(name: 'prev_chapter_id') final int? prevChapterId}) =
-      _$ChapterPagesModelImpl;
+      {@JsonKey(readValue: _readChapterId) required final String id,
+      @JsonKey(name: 'chapterName', readValue: _readChapterName)
+      required final String chapterName,
+      @JsonKey(name: 'storyId', readValue: _readStoryId)
+      required final String storyId,
+      @JsonKey(name: 'storyName', readValue: _readStoryName)
+      required final String storyName,
+      required final List<String> images}) = _$ChapterPagesModelImpl;
 
   factory _ChapterPagesModel.fromJson(Map<String, dynamic> json) =
       _$ChapterPagesModelImpl.fromJson;
 
   @override
-  int get id;
+  @JsonKey(readValue: _readChapterId)
+  String get id;
   @override
-  @JsonKey(name: 'chapter_number')
-  String get chapterNumber;
+  @JsonKey(name: 'chapterName', readValue: _readChapterName)
+  String get chapterName;
+  @override
+  @JsonKey(name: 'storyId', readValue: _readStoryId)
+  String get storyId;
+  @override
+  @JsonKey(name: 'storyName', readValue: _readStoryName)
+  String get storyName;
   @override
   List<String> get images;
-  @override
-  @JsonKey(name: 'next_chapter_id')
-  int? get nextChapterId;
-  @override
-  @JsonKey(name: 'prev_chapter_id')
-  int? get prevChapterId;
 
   /// Create a copy of ChapterPagesModel
   /// with the given fields replaced by the non-null parameter values.

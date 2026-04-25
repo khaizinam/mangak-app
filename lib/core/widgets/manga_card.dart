@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:timeago/timeago.dart' as timeago;
 import '../../features/home/data/models/manga_model.dart';
 
 class MangaCard extends StatelessWidget {
@@ -24,75 +25,111 @@ class MangaCard extends StatelessWidget {
     return views.toString();
   }
 
+  String _getTimeAgo(String? updatedAt) {
+    if (updatedAt == null || updatedAt.isEmpty) return '';
+    try {
+      // API format: "2026-03-09 09:35:02"
+      final dateTime = DateTime.parse(updatedAt.replaceAll(' ', 'T'));
+      return timeago.format(dateTime);
+    } catch (e) {
+      return '';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final latestChapter = manga.chaptersLatest?.isNotEmpty == true 
         ? manga.chaptersLatest!.first.chapterName ?? '0'
         : '0';
+    final timeAgo = _getTimeAgo(manga.updatedAt);
 
     return GestureDetector(
       onTap: onTap,
-      child: Card(
-        clipBehavior: Clip.antiAlias,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        color: const Color(0xFF1E2124), // Dark background for the card
-        elevation: 2,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: CachedNetworkImage(
-                imageUrl: manga.thumbUrl,
-                fit: BoxFit.cover,
-                width: double.infinity,
-                placeholder: (context, url) => Shimmer.fromColors(
-                  baseColor: Colors.grey[800]!,
-                  highlightColor: Colors.grey[600]!,
-                  child: Container(color: Colors.white),
-                ),
-                errorWidget: (context, url, error) => const Icon(Icons.error, color: Colors.grey),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          AspectRatio(
+            aspectRatio: 200 / 267,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: const Color(0xFF1E2124),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              clipBehavior: Clip.antiAlias,
+              child: Stack(
                 children: [
-                  Text(
-                    manga.name,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold, 
-                      fontSize: 13,
-                      color: Colors.white,
+                  Positioned.fill(
+                    child: CachedNetworkImage(
+                      imageUrl: manga.thumbUrl,
+                      fit: BoxFit.cover,
+                      placeholder: (context, url) => Shimmer.fromColors(
+                        baseColor: Colors.grey[800]!,
+                        highlightColor: Colors.grey[600]!,
+                        child: Container(color: Colors.white),
+                      ),
+                      errorWidget: (context, url, error) => const Icon(Icons.error, color: Colors.grey),
                     ),
                   ),
-                  const SizedBox(height: 8),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Chap. $latestChapter',
-                        style: TextStyle(color: Colors.grey[400], fontSize: 11),
-                      ),
-                      Row(
-                        children: [
-                          const Icon(Icons.remove_red_eye, color: Colors.amber, size: 12),
-                          const SizedBox(width: 4),
-                          Text(
-                            _formatViews(manga.views),
-                            style: TextStyle(color: Colors.grey[400], fontSize: 11),
+                  if (timeAgo.isNotEmpty)
+                    Positioned(
+                      top: 8,
+                      left: 8,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: Colors.blue.withAlpha(230),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Text(
+                          timeAgo,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
                           ),
-                        ],
+                        ),
                       ),
-                    ],
-                  ),
+                    ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+          const SizedBox(height: 8),
+          SizedBox(
+            height: 36, // Fixed height for 2 lines
+            child: Text(
+              manga.name,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold, 
+                fontSize: 13,
+                color: Colors.white,
+                height: 1.2,
+              ),
+            ),
+          ),
+          const SizedBox(height: 4),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Chap. $latestChapter',
+                style: TextStyle(color: Colors.grey[400], fontSize: 11),
+              ),
+              Row(
+                children: [
+                  const Icon(Icons.remove_red_eye, color: Colors.amber, size: 12),
+                  const SizedBox(width: 4),
+                  Text(
+                    _formatViews(manga.views),
+                    style: TextStyle(color: Colors.grey[400], fontSize: 11),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/widgets/manga_card.dart';
 import '../../data/models/manga_model.dart';
+import '../providers/category_provider.dart';
 import '../providers/home_provider.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -13,6 +14,7 @@ class HomeScreen extends ConsumerWidget {
     final hotManga = ref.watch(hotMangaProvider);
     final updatedManga = ref.watch(updatedMangaProvider);
     final featuredSections = ref.watch(featuredSectionsProvider);
+    final categoriesAsync = ref.watch(categoriesProvider);
 
     return Scaffold(
       body: RefreshIndicator(
@@ -20,6 +22,7 @@ class HomeScreen extends ConsumerWidget {
           ref.invalidate(hotMangaProvider);
           ref.invalidate(updatedMangaProvider);
           ref.invalidate(featuredSectionsProvider);
+          ref.invalidate(categoriesProvider);
         },
         child: CustomScrollView(
           slivers: [
@@ -28,9 +31,13 @@ class HomeScreen extends ConsumerWidget {
               title: const Text('MangaK', style: TextStyle(fontWeight: FontWeight.bold)),
               actions: [
                 IconButton(icon: const Icon(Icons.notifications_none), onPressed: () {}),
-                IconButton(icon: const Icon(Icons.search), onPressed: () {}),
+                IconButton(icon: const Icon(Icons.search), onPressed: () => context.push('/search')),
               ],
             ),
+            
+            // Category Badges
+            SliverToBoxAdapter(child: _buildCategoryBadges(categoriesAsync, context)),
+
             SliverToBoxAdapter(child: _buildSectionTitle('Truyện Hot 🔥')),
             SliverToBoxAdapter(child: _buildHorizontalList(hotManga, context)),
             
@@ -41,6 +48,62 @@ class HomeScreen extends ConsumerWidget {
             _buildLoadMoreButton(ref),
             const SliverToBoxAdapter(child: SizedBox(height: 24)),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCategoryBadges(AsyncValue<List<CategoryModel>> categoriesAsync, BuildContext context) {
+    return SizedBox(
+      height: 60,
+      child: categoriesAsync.when(
+        data: (list) => ListView.builder(
+          scrollDirection: Axis.horizontal,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          itemCount: list.length,
+          itemBuilder: (context, index) {
+            final cat = list[index];
+            return Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () => context.push('/category/${cat.id}?name=${cat.name}'),
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF27AE60).withAlpha(30),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: const Color(0xFF27AE60).withAlpha(100)),
+                    ),
+                    child: Text(
+                      cat.name,
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+        loading: () => const Center(
+          child: SizedBox(
+            width: 20,
+            height: 20,
+            child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF27AE60)),
+          ),
+        ),
+        error: (e, s) => Center(
+          child: Text(
+            'Không tải được danh mục',
+            style: TextStyle(color: Colors.white.withAlpha(50), fontSize: 12),
+          ),
         ),
       ),
     );
@@ -58,17 +121,20 @@ class HomeScreen extends ConsumerWidget {
 
   Widget _buildHorizontalList(AsyncValue<List<MangaModel>> hotManga, BuildContext context) {
     return SizedBox(
-      height: 220,
+      height: 280,
       child: hotManga.when(
         data: (list) => ListView.builder(
           scrollDirection: Axis.horizontal,
           padding: const EdgeInsets.symmetric(horizontal: 12),
           itemCount: list.length,
-          itemBuilder: (context, index) => SizedBox(
-            width: 140,
-            child: MangaCard(
-              manga: list[index],
-              onTap: () => context.push('/manga/${list[index].id}'),
+          itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: SizedBox(
+              width: 140,
+              child: MangaCard(
+                manga: list[index],
+                onTap: () => context.push('/manga/${list[index].id}'),
+              ),
             ),
           ),
         ),
@@ -101,9 +167,9 @@ class HomeScreen extends ConsumerWidget {
         sliver: SliverGrid(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 0.65,
-            crossAxisSpacing: 8,
-            mainAxisSpacing: 8,
+            childAspectRatio: 0.55,
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 16,
           ),
           delegate: SliverChildBuilderDelegate(
             (context, index) => MangaCard(

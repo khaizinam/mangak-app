@@ -28,7 +28,7 @@ mixin _$MangaDetailModel {
   String get thumbUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'origin_name')
   String? get originName => throw _privateConstructorUsedError;
-  String get status => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
   @JsonKey(readValue: _readId)
   String? get views => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
@@ -40,10 +40,13 @@ mixin _$MangaDetailModel {
   List<DetailChapterLatestModel> get chaptersLatest =>
       throw _privateConstructorUsedError;
   @JsonKey(name: 'updatedAt')
-  String? get updatedAt =>
-      throw _privateConstructorUsedError; // Non-API fields with defaults (user interaction state)
+  String? get updatedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_followed')
   bool get isFollowed => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_liked')
   bool get isLiked => throw _privateConstructorUsedError;
+  @JsonKey(name: 'last_read_at')
+  LastReadModel? get lastReadAt => throw _privateConstructorUsedError;
   int get follows => throw _privateConstructorUsedError;
   int get likes => throw _privateConstructorUsedError;
 
@@ -69,7 +72,7 @@ abstract class $MangaDetailModelCopyWith<$Res> {
       String slug,
       @JsonKey(name: 'thumb_url') String thumbUrl,
       @JsonKey(name: 'origin_name') String? originName,
-      String status,
+      String? status,
       @JsonKey(readValue: _readId) String? views,
       String? description,
       @JsonKey(name: 'total_chapters', readValue: _readId)
@@ -79,10 +82,13 @@ abstract class $MangaDetailModelCopyWith<$Res> {
       @JsonKey(name: 'chaptersLatest')
       List<DetailChapterLatestModel> chaptersLatest,
       @JsonKey(name: 'updatedAt') String? updatedAt,
-      bool isFollowed,
-      bool isLiked,
+      @JsonKey(name: 'is_followed') bool isFollowed,
+      @JsonKey(name: 'is_liked') bool isLiked,
+      @JsonKey(name: 'last_read_at') LastReadModel? lastReadAt,
       int follows,
       int likes});
+
+  $LastReadModelCopyWith<$Res>? get lastReadAt;
 }
 
 /// @nodoc
@@ -105,7 +111,7 @@ class _$MangaDetailModelCopyWithImpl<$Res, $Val extends MangaDetailModel>
     Object? slug = null,
     Object? thumbUrl = null,
     Object? originName = freezed,
-    Object? status = null,
+    Object? status = freezed,
     Object? views = freezed,
     Object? description = freezed,
     Object? totalChapters = freezed,
@@ -115,6 +121,7 @@ class _$MangaDetailModelCopyWithImpl<$Res, $Val extends MangaDetailModel>
     Object? updatedAt = freezed,
     Object? isFollowed = null,
     Object? isLiked = null,
+    Object? lastReadAt = freezed,
     Object? follows = null,
     Object? likes = null,
   }) {
@@ -139,10 +146,10 @@ class _$MangaDetailModelCopyWithImpl<$Res, $Val extends MangaDetailModel>
           ? _value.originName
           : originName // ignore: cast_nullable_to_non_nullable
               as String?,
-      status: null == status
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       views: freezed == views
           ? _value.views
           : views // ignore: cast_nullable_to_non_nullable
@@ -179,6 +186,10 @@ class _$MangaDetailModelCopyWithImpl<$Res, $Val extends MangaDetailModel>
           ? _value.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
               as bool,
+      lastReadAt: freezed == lastReadAt
+          ? _value.lastReadAt
+          : lastReadAt // ignore: cast_nullable_to_non_nullable
+              as LastReadModel?,
       follows: null == follows
           ? _value.follows
           : follows // ignore: cast_nullable_to_non_nullable
@@ -188,6 +199,20 @@ class _$MangaDetailModelCopyWithImpl<$Res, $Val extends MangaDetailModel>
           : likes // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
+  }
+
+  /// Create a copy of MangaDetailModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LastReadModelCopyWith<$Res>? get lastReadAt {
+    if (_value.lastReadAt == null) {
+      return null;
+    }
+
+    return $LastReadModelCopyWith<$Res>(_value.lastReadAt!, (value) {
+      return _then(_value.copyWith(lastReadAt: value) as $Val);
+    });
   }
 }
 
@@ -205,7 +230,7 @@ abstract class _$$MangaDetailModelImplCopyWith<$Res>
       String slug,
       @JsonKey(name: 'thumb_url') String thumbUrl,
       @JsonKey(name: 'origin_name') String? originName,
-      String status,
+      String? status,
       @JsonKey(readValue: _readId) String? views,
       String? description,
       @JsonKey(name: 'total_chapters', readValue: _readId)
@@ -215,10 +240,14 @@ abstract class _$$MangaDetailModelImplCopyWith<$Res>
       @JsonKey(name: 'chaptersLatest')
       List<DetailChapterLatestModel> chaptersLatest,
       @JsonKey(name: 'updatedAt') String? updatedAt,
-      bool isFollowed,
-      bool isLiked,
+      @JsonKey(name: 'is_followed') bool isFollowed,
+      @JsonKey(name: 'is_liked') bool isLiked,
+      @JsonKey(name: 'last_read_at') LastReadModel? lastReadAt,
       int follows,
       int likes});
+
+  @override
+  $LastReadModelCopyWith<$Res>? get lastReadAt;
 }
 
 /// @nodoc
@@ -239,7 +268,7 @@ class __$$MangaDetailModelImplCopyWithImpl<$Res>
     Object? slug = null,
     Object? thumbUrl = null,
     Object? originName = freezed,
-    Object? status = null,
+    Object? status = freezed,
     Object? views = freezed,
     Object? description = freezed,
     Object? totalChapters = freezed,
@@ -249,6 +278,7 @@ class __$$MangaDetailModelImplCopyWithImpl<$Res>
     Object? updatedAt = freezed,
     Object? isFollowed = null,
     Object? isLiked = null,
+    Object? lastReadAt = freezed,
     Object? follows = null,
     Object? likes = null,
   }) {
@@ -273,10 +303,10 @@ class __$$MangaDetailModelImplCopyWithImpl<$Res>
           ? _value.originName
           : originName // ignore: cast_nullable_to_non_nullable
               as String?,
-      status: null == status
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       views: freezed == views
           ? _value.views
           : views // ignore: cast_nullable_to_non_nullable
@@ -313,6 +343,10 @@ class __$$MangaDetailModelImplCopyWithImpl<$Res>
           ? _value.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
               as bool,
+      lastReadAt: freezed == lastReadAt
+          ? _value.lastReadAt
+          : lastReadAt // ignore: cast_nullable_to_non_nullable
+              as LastReadModel?,
       follows: null == follows
           ? _value.follows
           : follows // ignore: cast_nullable_to_non_nullable
@@ -334,7 +368,7 @@ class _$MangaDetailModelImpl implements _MangaDetailModel {
       required this.slug,
       @JsonKey(name: 'thumb_url') required this.thumbUrl,
       @JsonKey(name: 'origin_name') this.originName,
-      required this.status,
+      this.status,
       @JsonKey(readValue: _readId) this.views,
       this.description,
       @JsonKey(name: 'total_chapters', readValue: _readId) this.totalChapters,
@@ -343,8 +377,9 @@ class _$MangaDetailModelImpl implements _MangaDetailModel {
       @JsonKey(name: 'chaptersLatest')
       final List<DetailChapterLatestModel> chaptersLatest = const [],
       @JsonKey(name: 'updatedAt') this.updatedAt,
-      this.isFollowed = false,
-      this.isLiked = false,
+      @JsonKey(name: 'is_followed') this.isFollowed = false,
+      @JsonKey(name: 'is_liked') this.isLiked = false,
+      @JsonKey(name: 'last_read_at') this.lastReadAt,
       this.follows = 0,
       this.likes = 0})
       : _author = author,
@@ -368,7 +403,7 @@ class _$MangaDetailModelImpl implements _MangaDetailModel {
   @JsonKey(name: 'origin_name')
   final String? originName;
   @override
-  final String status;
+  final String? status;
   @override
   @JsonKey(readValue: _readId)
   final String? views;
@@ -407,13 +442,15 @@ class _$MangaDetailModelImpl implements _MangaDetailModel {
   @override
   @JsonKey(name: 'updatedAt')
   final String? updatedAt;
-// Non-API fields with defaults (user interaction state)
   @override
-  @JsonKey()
+  @JsonKey(name: 'is_followed')
   final bool isFollowed;
   @override
-  @JsonKey()
+  @JsonKey(name: 'is_liked')
   final bool isLiked;
+  @override
+  @JsonKey(name: 'last_read_at')
+  final LastReadModel? lastReadAt;
   @override
   @JsonKey()
   final int follows;
@@ -423,7 +460,7 @@ class _$MangaDetailModelImpl implements _MangaDetailModel {
 
   @override
   String toString() {
-    return 'MangaDetailModel(id: $id, name: $name, slug: $slug, thumbUrl: $thumbUrl, originName: $originName, status: $status, views: $views, description: $description, totalChapters: $totalChapters, author: $author, category: $category, chaptersLatest: $chaptersLatest, updatedAt: $updatedAt, isFollowed: $isFollowed, isLiked: $isLiked, follows: $follows, likes: $likes)';
+    return 'MangaDetailModel(id: $id, name: $name, slug: $slug, thumbUrl: $thumbUrl, originName: $originName, status: $status, views: $views, description: $description, totalChapters: $totalChapters, author: $author, category: $category, chaptersLatest: $chaptersLatest, updatedAt: $updatedAt, isFollowed: $isFollowed, isLiked: $isLiked, lastReadAt: $lastReadAt, follows: $follows, likes: $likes)';
   }
 
   @override
@@ -453,6 +490,8 @@ class _$MangaDetailModelImpl implements _MangaDetailModel {
             (identical(other.isFollowed, isFollowed) ||
                 other.isFollowed == isFollowed) &&
             (identical(other.isLiked, isLiked) || other.isLiked == isLiked) &&
+            (identical(other.lastReadAt, lastReadAt) ||
+                other.lastReadAt == lastReadAt) &&
             (identical(other.follows, follows) || other.follows == follows) &&
             (identical(other.likes, likes) || other.likes == likes));
   }
@@ -476,6 +515,7 @@ class _$MangaDetailModelImpl implements _MangaDetailModel {
       updatedAt,
       isFollowed,
       isLiked,
+      lastReadAt,
       follows,
       likes);
 
@@ -503,7 +543,7 @@ abstract class _MangaDetailModel implements MangaDetailModel {
       required final String slug,
       @JsonKey(name: 'thumb_url') required final String thumbUrl,
       @JsonKey(name: 'origin_name') final String? originName,
-      required final String status,
+      final String? status,
       @JsonKey(readValue: _readId) final String? views,
       final String? description,
       @JsonKey(name: 'total_chapters', readValue: _readId)
@@ -513,8 +553,9 @@ abstract class _MangaDetailModel implements MangaDetailModel {
       @JsonKey(name: 'chaptersLatest')
       final List<DetailChapterLatestModel> chaptersLatest,
       @JsonKey(name: 'updatedAt') final String? updatedAt,
-      final bool isFollowed,
-      final bool isLiked,
+      @JsonKey(name: 'is_followed') final bool isFollowed,
+      @JsonKey(name: 'is_liked') final bool isLiked,
+      @JsonKey(name: 'last_read_at') final LastReadModel? lastReadAt,
       final int follows,
       final int likes}) = _$MangaDetailModelImpl;
 
@@ -535,7 +576,7 @@ abstract class _MangaDetailModel implements MangaDetailModel {
   @JsonKey(name: 'origin_name')
   String? get originName;
   @override
-  String get status;
+  String? get status;
   @override
   @JsonKey(readValue: _readId)
   String? get views;
@@ -553,12 +594,16 @@ abstract class _MangaDetailModel implements MangaDetailModel {
   List<DetailChapterLatestModel> get chaptersLatest;
   @override
   @JsonKey(name: 'updatedAt')
-  String?
-      get updatedAt; // Non-API fields with defaults (user interaction state)
+  String? get updatedAt;
   @override
+  @JsonKey(name: 'is_followed')
   bool get isFollowed;
   @override
+  @JsonKey(name: 'is_liked')
   bool get isLiked;
+  @override
+  @JsonKey(name: 'last_read_at')
+  LastReadModel? get lastReadAt;
   @override
   int get follows;
   @override
@@ -572,6 +617,176 @@ abstract class _MangaDetailModel implements MangaDetailModel {
       throw _privateConstructorUsedError;
 }
 
+LastReadModel _$LastReadModelFromJson(Map<String, dynamic> json) {
+  return _LastReadModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LastReadModel {
+  @JsonKey(readValue: _readId)
+  String? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+
+  /// Serializes this LastReadModel to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of LastReadModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LastReadModelCopyWith<LastReadModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LastReadModelCopyWith<$Res> {
+  factory $LastReadModelCopyWith(
+          LastReadModel value, $Res Function(LastReadModel) then) =
+      _$LastReadModelCopyWithImpl<$Res, LastReadModel>;
+  @useResult
+  $Res call({@JsonKey(readValue: _readId) String? id, String? name});
+}
+
+/// @nodoc
+class _$LastReadModelCopyWithImpl<$Res, $Val extends LastReadModel>
+    implements $LastReadModelCopyWith<$Res> {
+  _$LastReadModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LastReadModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LastReadModelImplCopyWith<$Res>
+    implements $LastReadModelCopyWith<$Res> {
+  factory _$$LastReadModelImplCopyWith(
+          _$LastReadModelImpl value, $Res Function(_$LastReadModelImpl) then) =
+      __$$LastReadModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(readValue: _readId) String? id, String? name});
+}
+
+/// @nodoc
+class __$$LastReadModelImplCopyWithImpl<$Res>
+    extends _$LastReadModelCopyWithImpl<$Res, _$LastReadModelImpl>
+    implements _$$LastReadModelImplCopyWith<$Res> {
+  __$$LastReadModelImplCopyWithImpl(
+      _$LastReadModelImpl _value, $Res Function(_$LastReadModelImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LastReadModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_$LastReadModelImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LastReadModelImpl implements _LastReadModel {
+  const _$LastReadModelImpl({@JsonKey(readValue: _readId) this.id, this.name});
+
+  factory _$LastReadModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LastReadModelImplFromJson(json);
+
+  @override
+  @JsonKey(readValue: _readId)
+  final String? id;
+  @override
+  final String? name;
+
+  @override
+  String toString() {
+    return 'LastReadModel(id: $id, name: $name)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LastReadModelImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name);
+
+  /// Create a copy of LastReadModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LastReadModelImplCopyWith<_$LastReadModelImpl> get copyWith =>
+      __$$LastReadModelImplCopyWithImpl<_$LastReadModelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LastReadModelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LastReadModel implements LastReadModel {
+  const factory _LastReadModel(
+      {@JsonKey(readValue: _readId) final String? id,
+      final String? name}) = _$LastReadModelImpl;
+
+  factory _LastReadModel.fromJson(Map<String, dynamic> json) =
+      _$LastReadModelImpl.fromJson;
+
+  @override
+  @JsonKey(readValue: _readId)
+  String? get id;
+  @override
+  String? get name;
+
+  /// Create a copy of LastReadModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LastReadModelImplCopyWith<_$LastReadModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 DetailCategoryModel _$DetailCategoryModelFromJson(Map<String, dynamic> json) {
   return _DetailCategoryModel.fromJson(json);
 }
@@ -579,9 +794,9 @@ DetailCategoryModel _$DetailCategoryModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$DetailCategoryModel {
   @JsonKey(readValue: _readId)
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get slug => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get slug => throw _privateConstructorUsedError;
 
   /// Serializes this DetailCategoryModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -599,7 +814,8 @@ abstract class $DetailCategoryModelCopyWith<$Res> {
           DetailCategoryModel value, $Res Function(DetailCategoryModel) then) =
       _$DetailCategoryModelCopyWithImpl<$Res, DetailCategoryModel>;
   @useResult
-  $Res call({@JsonKey(readValue: _readId) String id, String name, String slug});
+  $Res call(
+      {@JsonKey(readValue: _readId) String? id, String? name, String? slug});
 }
 
 /// @nodoc
@@ -617,23 +833,23 @@ class _$DetailCategoryModelCopyWithImpl<$Res, $Val extends DetailCategoryModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? slug = null,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? slug = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      slug: null == slug
+              as String?,
+      slug: freezed == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -646,7 +862,8 @@ abstract class _$$DetailCategoryModelImplCopyWith<$Res>
       __$$DetailCategoryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(readValue: _readId) String id, String name, String slug});
+  $Res call(
+      {@JsonKey(readValue: _readId) String? id, String? name, String? slug});
 }
 
 /// @nodoc
@@ -662,23 +879,23 @@ class __$$DetailCategoryModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? slug = null,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? slug = freezed,
   }) {
     return _then(_$DetailCategoryModelImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      slug: null == slug
+              as String?,
+      slug: freezed == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -687,20 +904,18 @@ class __$$DetailCategoryModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DetailCategoryModelImpl implements _DetailCategoryModel {
   const _$DetailCategoryModelImpl(
-      {@JsonKey(readValue: _readId) required this.id,
-      required this.name,
-      required this.slug});
+      {@JsonKey(readValue: _readId) this.id, this.name, this.slug});
 
   factory _$DetailCategoryModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$DetailCategoryModelImplFromJson(json);
 
   @override
   @JsonKey(readValue: _readId)
-  final String id;
+  final String? id;
   @override
-  final String name;
+  final String? name;
   @override
-  final String slug;
+  final String? slug;
 
   @override
   String toString() {
@@ -740,20 +955,20 @@ class _$DetailCategoryModelImpl implements _DetailCategoryModel {
 
 abstract class _DetailCategoryModel implements DetailCategoryModel {
   const factory _DetailCategoryModel(
-      {@JsonKey(readValue: _readId) required final String id,
-      required final String name,
-      required final String slug}) = _$DetailCategoryModelImpl;
+      {@JsonKey(readValue: _readId) final String? id,
+      final String? name,
+      final String? slug}) = _$DetailCategoryModelImpl;
 
   factory _DetailCategoryModel.fromJson(Map<String, dynamic> json) =
       _$DetailCategoryModelImpl.fromJson;
 
   @override
   @JsonKey(readValue: _readId)
-  String get id;
+  String? get id;
   @override
-  String get name;
+  String? get name;
   @override
-  String get slug;
+  String? get slug;
 
   /// Create a copy of DetailCategoryModel
   /// with the given fields replaced by the non-null parameter values.
@@ -979,8 +1194,8 @@ ChapterModel _$ChapterModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ChapterModel {
   @JsonKey(readValue: _readId)
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
 
   /// Serializes this ChapterModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -998,7 +1213,7 @@ abstract class $ChapterModelCopyWith<$Res> {
           ChapterModel value, $Res Function(ChapterModel) then) =
       _$ChapterModelCopyWithImpl<$Res, ChapterModel>;
   @useResult
-  $Res call({@JsonKey(readValue: _readId) String id, String name});
+  $Res call({@JsonKey(readValue: _readId) String? id, String? name});
 }
 
 /// @nodoc
@@ -1016,18 +1231,18 @@ class _$ChapterModelCopyWithImpl<$Res, $Val extends ChapterModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
+    Object? id = freezed,
+    Object? name = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -1040,7 +1255,7 @@ abstract class _$$ChapterModelImplCopyWith<$Res>
       __$$ChapterModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(readValue: _readId) String id, String name});
+  $Res call({@JsonKey(readValue: _readId) String? id, String? name});
 }
 
 /// @nodoc
@@ -1056,18 +1271,18 @@ class __$$ChapterModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
+    Object? id = freezed,
+    Object? name = freezed,
   }) {
     return _then(_$ChapterModelImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -1075,17 +1290,16 @@ class __$$ChapterModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ChapterModelImpl implements _ChapterModel {
-  const _$ChapterModelImpl(
-      {@JsonKey(readValue: _readId) required this.id, required this.name});
+  const _$ChapterModelImpl({@JsonKey(readValue: _readId) this.id, this.name});
 
   factory _$ChapterModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ChapterModelImplFromJson(json);
 
   @override
   @JsonKey(readValue: _readId)
-  final String id;
+  final String? id;
   @override
-  final String name;
+  final String? name;
 
   @override
   String toString() {
@@ -1123,17 +1337,17 @@ class _$ChapterModelImpl implements _ChapterModel {
 
 abstract class _ChapterModel implements ChapterModel {
   const factory _ChapterModel(
-      {@JsonKey(readValue: _readId) required final String id,
-      required final String name}) = _$ChapterModelImpl;
+      {@JsonKey(readValue: _readId) final String? id,
+      final String? name}) = _$ChapterModelImpl;
 
   factory _ChapterModel.fromJson(Map<String, dynamic> json) =
       _$ChapterModelImpl.fromJson;
 
   @override
   @JsonKey(readValue: _readId)
-  String get id;
+  String? get id;
   @override
-  String get name;
+  String? get name;
 
   /// Create a copy of ChapterModel
   /// with the given fields replaced by the non-null parameter values.

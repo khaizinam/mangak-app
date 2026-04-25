@@ -11,7 +11,7 @@ class MangaModel with _$MangaModel {
     required String slug,
     @JsonKey(name: 'thumb_url') required String thumbUrl,
     @JsonKey(readValue: _readTotalChapters, name: 'total_chapters') String? totalChapters,
-    @JsonKey(name: 'updated_at') String? updatedAt,
+    @JsonKey(name: 'updatedAt') String? updatedAt,
     List<String>? author,
     String? status,
     @JsonKey(readValue: _readId) String? views,
@@ -40,7 +40,7 @@ class CategoryModel with _$CategoryModel {
   const factory CategoryModel({
     @JsonKey(readValue: _readId) required String id,
     required String name,
-    required String slug,
+    String? slug,
   }) = _CategoryModel;
 
   factory CategoryModel.fromJson(Map<String, dynamic> json) =>

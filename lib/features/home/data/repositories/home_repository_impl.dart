@@ -10,16 +10,44 @@ class HomeRepositoryImpl implements HomeRepository {
   HomeRepositoryImpl(this._dio);
 
   @override
-  Future<List<MangaModel>> getMangaList({String? sort, int? limit, int? page, String? category, String? keyword}) async {
-    final endpoint = sort == 'popular' ? ApiConstants.storiesMostViewed : ApiConstants.storiesList;
+  Future<List<MangaModel>> getMangaList({int? page, String? keyword}) async {
     final response = await _dio.get(
-      endpoint,
+      ApiConstants.storiesList,
       queryParameters: {
-        if (sort != null && sort != 'popular') 'sort': sort,
-        if (sort == 'popular') 'type': 'weekly', // as per user request for weekly
-        if (limit != null) 'limit': limit,
         if (page != null) 'page': page,
-        if (category != null) 'category': category,
+        if (keyword != null) 'keyword': keyword,
+      },
+    );
+    
+    final data = response.data['data'];
+    List items = [];
+    if (data is Map) {
+      items = data['items'] ?? [];
+    } else if (data is List) {
+      items = data;
+    }
+    
+    return items.map((json) => MangaModel.fromJson(json)).toList();
+  }
+
+  @override
+  Future<List<CategoryModel>> getCategories({int? page}) async {
+    final response = await _dio.get(
+      ApiConstants.categories,
+      queryParameters: {
+        if (page != null) 'page': page,
+      },
+    );
+    final List data = response.data['data'] ?? [];
+    return data.map((json) => CategoryModel.fromJson(json)).toList();
+  }
+
+  @override
+  Future<List<MangaModel>> getCategoryStories(String categoryId, {int? page, String? keyword}) async {
+    final response = await _dio.get(
+      '${ApiConstants.categoryDetail}/$categoryId',
+      queryParameters: {
+        if (page != null) 'page': page,
         if (keyword != null) 'keyword': keyword,
       },
     );

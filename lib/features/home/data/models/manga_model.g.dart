@@ -13,7 +13,7 @@ _$MangaModelImpl _$$MangaModelImplFromJson(Map<String, dynamic> json) =>
       slug: json['slug'] as String,
       thumbUrl: json['thumb_url'] as String,
       totalChapters: _readTotalChapters(json, 'total_chapters') as String?,
-      updatedAt: json['updated_at'] as String?,
+      updatedAt: json['updatedAt'] as String?,
       author:
           (json['author'] as List<dynamic>?)?.map((e) => e as String).toList(),
       status: json['status'] as String?,
@@ -31,7 +31,7 @@ Map<String, dynamic> _$$MangaModelImplToJson(_$MangaModelImpl instance) =>
       'slug': instance.slug,
       'thumb_url': instance.thumbUrl,
       'total_chapters': instance.totalChapters,
-      'updated_at': instance.updatedAt,
+      'updatedAt': instance.updatedAt,
       'author': instance.author,
       'status': instance.status,
       'views': instance.views,
@@ -61,7 +61,7 @@ _$CategoryModelImpl _$$CategoryModelImplFromJson(Map<String, dynamic> json) =>
     _$CategoryModelImpl(
       id: _readId(json, 'id') as String,
       name: json['name'] as String,
-      slug: json['slug'] as String,
+      slug: json['slug'] as String?,
     );
 
 Map<String, dynamic> _$$CategoryModelImplToJson(_$CategoryModelImpl instance) =>

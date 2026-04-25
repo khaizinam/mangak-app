@@ -15,30 +15,27 @@ final mangaDetailProvider = FutureProvider.family<MangaDetailModel, String>((ref
 
 // ─── Paginated chapters ────────────────────────────────────────────────────
 
+// ─── All chapters with local sorting ──────────────────────────────────────
 class ChaptersState {
   final List<ChapterModel> chapters;
   final bool isLoading;
-  final bool hasMore;
-  final int currentPage;
+  final bool isAscending;
 
   const ChaptersState({
     this.chapters = const [],
     this.isLoading = false,
-    this.hasMore = true,
-    this.currentPage = 0,
+    this.isAscending = false,
   });
 
   ChaptersState copyWith({
     List<ChapterModel>? chapters,
     bool? isLoading,
-    bool? hasMore,
-    int? currentPage,
+    bool? isAscending,
   }) =>
       ChaptersState(
         chapters: chapters ?? this.chapters,
         isLoading: isLoading ?? this.isLoading,
-        hasMore: hasMore ?? this.hasMore,
-        currentPage: currentPage ?? this.currentPage,
+        isAscending: isAscending ?? this.isAscending,
       );
 }
 
@@ -47,26 +44,31 @@ class ChaptersNotifier extends StateNotifier<ChaptersState> {
   final String _mangaId;
 
   ChaptersNotifier(this._repository, this._mangaId) : super(const ChaptersState()) {
-    loadMore(); // Load first page on creation
+    fetchChapters();
   }
 
-  Future<void> loadMore() async {
-    if (state.isLoading || !state.hasMore) return;
-
+  Future<void> fetchChapters() async {
     state = state.copyWith(isLoading: true);
     try {
-      final nextPage = state.currentPage + 1;
-      final result = await _repository.getChapters(_mangaId, page: nextPage);
-
+      final chapters = await _repository.getChapters(_mangaId);
+      // API returns descending by default
       state = state.copyWith(
-        chapters: [...state.chapters, ...result.chapters],
-        hasMore: result.hasMore,
-        currentPage: nextPage,
+        chapters: chapters,
+        isAscending: false,
         isLoading: false,
       );
     } catch (e) {
       state = state.copyWith(isLoading: false);
     }
+  }
+
+  void toggleSort() {
+    final newIsAscending = !state.isAscending;
+    final sortedChapters = List<ChapterModel>.from(state.chapters).reversed.toList();
+    state = state.copyWith(
+      chapters: sortedChapters,
+      isAscending: newIsAscending,
+    );
   }
 }
 

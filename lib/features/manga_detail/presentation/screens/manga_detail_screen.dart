@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
 import '../providers/manga_detail_provider.dart';
+import '../../../../core/widgets/app_button.dart';
 import '../../data/models/manga_detail_model.dart';
 
 class MangaDetailScreen extends ConsumerWidget {
@@ -48,7 +49,63 @@ class MangaDetailScreen extends ConsumerWidget {
         ),
         SliverToBoxAdapter(child: _buildInfoCard(context, ref, manga, chaptersState)),
         SliverToBoxAdapter(child: _buildDescriptionCard(manga)),
-        SliverToBoxAdapter(child: _buildChapterSection(context, ref, manga, chaptersState)),
+        
+        // Chapter Header
+        SliverToBoxAdapter(
+          child: _buildChapterHeader(context, ref, manga, chaptersState),
+        ),
+
+        // Chapters Grid/List
+        if (chaptersState.isLoading && chaptersState.chapters.isEmpty)
+          const SliverFillRemaining(
+            child: Center(child: CircularProgressIndicator()),
+          )
+        else if (chaptersState.chapters.isEmpty)
+          const SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.all(32),
+              child: Center(
+                child: Text('Chưa có chương nào',
+                    style: TextStyle(color: Colors.white54)),
+              ),
+            ),
+          )
+        else
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+            sliver: SliverGrid(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8,
+                childAspectRatio: 2.8,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  final chapter = chaptersState.chapters[index];
+                  return GestureDetector(
+                    onTap: () =>
+                        context.push('/manga/${manga.id}/chapter/${chapter.id}'),
+                    child: Container(
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF1A1D27),
+                        borderRadius: BorderRadius.circular(6),
+                        border: Border.all(color: Colors.white12),
+                      ),
+                      child: Text(
+                        'C. ${chapter.name}',
+                        style: const TextStyle(color: Colors.white, fontSize: 13),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  );
+                },
+                childCount: chaptersState.chapters.length,
+              ),
+            ),
+          ),
+        
         const SliverToBoxAdapter(child: SizedBox(height: 32)),
       ],
     );
@@ -62,15 +119,12 @@ class MangaDetailScreen extends ConsumerWidget {
     MangaDetailModel manga,
     ChaptersState chaptersState,
   ) {
-    final latestChapter = manga.chaptersLatest.isNotEmpty
-        ? manga.chaptersLatest.first.chapterName ?? ''
-        : '';
     final statusMap = {
       'ongoing': 'Đang tiến hành',
       'completed': 'Hoàn thành',
       'coming_soon': 'Sắp ra mắt',
     };
-    final statusText = statusMap[manga.status] ?? manga.status;
+    final statusText = statusMap[manga.status] ?? manga.status ?? 'Đang cập nhật';
     final statusColor =
         manga.status == 'completed' ? Colors.blue : Colors.green;
 
@@ -151,28 +205,44 @@ class MangaDetailScreen extends ConsumerWidget {
           Wrap(
             spacing: 6,
             runSpacing: 6,
-            children: manga.category.map((cat) => _genreChip(cat.name)).toList(),
+            children: manga.category.map((cat) => _genreChip(context, cat)).toList(),
           ),
           const SizedBox(height: 14),
+
+          // Continue Reading Button (Conditional)
+          if (manga.lastReadAt != null && manga.lastReadAt!.id != null && manga.lastReadAt!.name != null) ...[
+            AppButton(
+              label: 'Đọc tiếp C.${manga.lastReadAt!.name}',
+              icon: Icons.play_arrow,
+              type: AppButtonType.primary,
+              width: double.infinity,
+              onTap: () => context.push('/manga/${manga.id}/chapter/${manga.lastReadAt!.id}'),
+            ),
+            const SizedBox(height: 10),
+          ],
 
           // Action buttons row 1
           Row(
             children: [
               Expanded(
-                child: _actionButton(
+                child: AppButton(
                   label: manga.isFollowed ? 'Đã theo dõi' : 'Theo dõi',
-                  icon: Icons.bookmark,
-                  color: const Color(0xFFE67E22),
-                  onTap: () {},
+                  icon: manga.isFollowed ? Icons.bookmark_added : Icons.bookmark_add_outlined,
+                  type: manga.isFollowed ? AppButtonType.primary : AppButtonType.secondary,
+                  onTap: () {
+                    // TODO: Implement toggle follow
+                  },
                 ),
               ),
               const SizedBox(width: 8),
               Expanded(
-                child: _actionButton(
+                child: AppButton(
                   label: manga.isLiked ? 'Đã thích' : 'Thích',
-                  icon: Icons.favorite,
-                  color: const Color(0xFFE74C3C),
-                  onTap: () {},
+                  icon: manga.isLiked ? Icons.favorite : Icons.favorite_border,
+                  type: manga.isLiked ? AppButtonType.danger : AppButtonType.secondary,
+                  onTap: () {
+                    // TODO: Implement toggle like
+                  },
                 ),
               ),
             ],
@@ -183,26 +253,46 @@ class MangaDetailScreen extends ConsumerWidget {
           Row(
             children: [
               Expanded(
-                child: _actionButton(
-                  label: latestChapter.isNotEmpty
-                      ? 'Đọc tiếp C.$latestChapter'
-                      : 'Đọc từ đầu',
-                  icon: Icons.play_arrow,
-                  color: const Color(0xFF27AE60),
+                child: AppButton(
+                  label: 'Chương đầu',
+                  icon: Icons.first_page,
+                  type: AppButtonType.outline,
                   onTap: () {
                     final chapters = chaptersState.chapters;
                     if (chapters.isNotEmpty) {
-                      context.push('/manga/${manga.id}/chapter/${chapters.first.id}');
+                      final firstChapter = chaptersState.isAscending ? chapters.first : chapters.last;
+                      context.push('/manga/${manga.id}/chapter/${firstChapter.id}');
                     }
                   },
                 ),
               ),
               const SizedBox(width: 8),
               Expanded(
-                child: _actionButton(
+                child: AppButton(
+                  label: 'Mới nhất',
+                  icon: Icons.last_page,
+                  type: AppButtonType.secondary,
+                  onTap: () {
+                    final chapters = chaptersState.chapters;
+                    if (chapters.isNotEmpty) {
+                      final lastChapter = chaptersState.isAscending ? chapters.last : chapters.first;
+                      context.push('/manga/${manga.id}/chapter/${lastChapter.id}');
+                    }
+                  },
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+
+          // Action buttons row 3
+          Row(
+            children: [
+              Expanded(
+                child: AppButton(
                   label: 'Báo Lỗi Truyện',
                   icon: Icons.warning_amber,
-                  color: const Color(0xFFC0392B),
+                  type: AppButtonType.danger,
                   onTap: () {},
                 ),
               ),
@@ -253,124 +343,60 @@ class MangaDetailScreen extends ConsumerWidget {
     );
   }
 
-  // ─── CHAPTER SECTION (wrap buttons) ───────────────────────────────────────
+  // ─── CHAPTER HEADER ───────────────────────────────────────────────────────
 
-  Widget _buildChapterSection(
+  Widget _buildChapterHeader(
     BuildContext context,
     WidgetRef ref,
     MangaDetailModel manga,
     ChaptersState chaptersState,
   ) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: BoxDecoration(
-        color: const Color(0xFF1A1D27),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white10),
+      margin: const EdgeInsets.fromLTRB(12, 6, 12, 0),
+      padding: const EdgeInsets.fromLTRB(14, 12, 4, 12),
+      decoration: const BoxDecoration(
+        color: Color(0xFF1A1D27),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
+        border: Border(
+          top: BorderSide(color: Colors.white10),
+          left: BorderSide(color: Colors.white10),
+          right: BorderSide(color: Colors.white10),
+        ),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // Header
-          Padding(
-            padding: const EdgeInsets.fromLTRB(14, 12, 14, 8),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: const [
-                    Icon(Icons.list, color: Color(0xFF27AE60), size: 20),
-                    SizedBox(width: 8),
-                    Text(
-                      'DANH SÁCH CHƯƠNG',
-                      style: TextStyle(
-                        color: Color(0xFF27AE60),
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ],
+          Row(
+            children: [
+              const Icon(Icons.list, color: Color(0xFF27AE60), size: 20),
+              const SizedBox(width: 8),
+              const Text(
+                'DANH SÁCH CHƯƠNG',
+                style: TextStyle(
+                  color: Color(0xFF27AE60),
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1,
                 ),
-                Text('${chaptersState.chapters.length} chương',
-                    style: const TextStyle(color: Colors.white54, fontSize: 13)),
-              ],
-            ),
+              ),
+              const SizedBox(width: 8),
+              Text(
+                '(${chaptersState.chapters.length})',
+                style: const TextStyle(color: Colors.white54, fontSize: 13),
+              ),
+            ],
           ),
-
-          const Divider(color: Colors.white10, height: 1),
-
-          if (chaptersState.chapters.isEmpty && chaptersState.isLoading)
-            const Padding(
-              padding: EdgeInsets.all(32),
-              child: Center(child: CircularProgressIndicator()),
-            )
-          else if (chaptersState.chapters.isEmpty)
-            const Padding(
-              padding: EdgeInsets.all(24),
-              child: Center(
-                child: Text('Chưa có chương nào',
-                    style: TextStyle(color: Colors.white54)),
-              ),
-            )
-          else
-            // Chapter buttons in a Wrap layout
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: chaptersState.chapters.map((chapter) {
-                  return GestureDetector(
-                    onTap: () =>
-                        context.push('/manga/${manga.id}/chapter/${chapter.id}'),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF252836),
-                        borderRadius: BorderRadius.circular(6),
-                        border: Border.all(color: Colors.white12),
-                      ),
-                      child: Text(
-                        'Chương ${chapter.name}',
-                        style: const TextStyle(
-                            color: Colors.white, fontSize: 13),
-                      ),
-                    ),
-                  );
-                }).toList(),
-              ),
+          IconButton(
+            icon: Icon(
+              chaptersState.isAscending ? Icons.south : Icons.north,
+              color: const Color(0xFF27AE60),
+              size: 20,
             ),
-
-          // Load more button
-          if (chaptersState.hasMore || chaptersState.isLoading)
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 4, 12, 14),
-              child: SizedBox(
-                width: double.infinity,
-                child: OutlinedButton(
-                  onPressed: chaptersState.isLoading
-                      ? null
-                      : () =>
-                          ref.read(mangaChaptersProvider(manga.id).notifier).loadMore(),
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: const Color(0xFF27AE60),
-                    side: const BorderSide(color: Color(0xFF27AE60)),
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                  ),
-                  child: chaptersState.isLoading
-                      ? const SizedBox(
-                          height: 18,
-                          width: 18,
-                          child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              color: Color(0xFF27AE60)),
-                        )
-                      : const Text('Xem thêm chương'),
-                ),
-              ),
-            ),
+            tooltip: 'Sắp xếp',
+            onPressed: () {
+              ref.read(mangaChaptersProvider(manga.id).notifier).toggleSort();
+            },
+          ),
         ],
       ),
     );
@@ -395,51 +421,23 @@ class MangaDetailScreen extends ConsumerWidget {
     );
   }
 
-  Widget _genreChip(String label) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-      decoration: BoxDecoration(
-        color: const Color(0xFF2C2F3D),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white12),
+  Widget _genreChip(BuildContext context, DetailCategoryModel cat) {
+    if (cat.id == null || cat.name == null) return const SizedBox.shrink();
+    return GestureDetector(
+      onTap: () => context.push('/category/${cat.id}?name=${cat.name}'),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        decoration: BoxDecoration(
+          color: const Color(0xFF2C2F3D),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.white12),
+        ),
+        child: Text(cat.name!,
+            style: const TextStyle(color: Colors.white70, fontSize: 12)),
       ),
-      child: Text(label,
-          style: const TextStyle(color: Colors.white70, fontSize: 12)),
     );
   }
 
-  Widget _actionButton({
-    required String label,
-    required IconData icon,
-    required Color color,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 10),
-        decoration:
-            BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, color: Colors.white, size: 16),
-            const SizedBox(width: 6),
-            Flexible(
-              child: Text(
-                label,
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 13,
-                    fontWeight: FontWeight.bold),
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   String _formatViews(String? viewsStr) {
     if (viewsStr == null || viewsStr.isEmpty) return '0';

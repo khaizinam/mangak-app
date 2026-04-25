@@ -15,7 +15,8 @@ class ApiConstants {
   static const String storyDetail = '/stories/detail'; // needs ID appended
   static const String storyChapters = '/stories/chapters'; // needs ID appended
   static const String chapterDetail = '/stories/chapter-detail'; // needs ID appended
-  static const String categories = '/categories'; // legacy? I'll keep for now or remove if unused
+  static const String categories = '/categories/';
+  static const String categoryDetail = '/categories/'; // same prefix, but uses ID
   
   // Real-time
   static const String pusherAppKey = 'your_pusher_key';

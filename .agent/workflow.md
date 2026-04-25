@@ -1,27 +1,16 @@
-# Standard Task Workflow for MangaK
+# MangaK Workflow (Concise)
 
-Follow these steps for every new feature or bug fix:
+## 1. Prepare (Data & Domain)
+- **Define Models**: `lib/features/*/data/models/`.
+- **Repo Contract**: `lib/features/*/domain/repositories/`.
+- **Code Gen**: `flutter pub run build_runner build --delete-conflicting-outputs`.
 
-## Phase 1: Planning
-1. **Analyze Requirements**: Understand the task goal.
-2. **Draft Plan**: Create an `implementation_plan.md` artifact.
-3. **Review Architecture**: Ensure the plan follows the Data/Domain/Presentation pattern.
+## 2. Build (Presentation & Logic)
+- **State**: Riverpod providers in `lib/features/*/presentation/providers/`.
+- **UI**: Components & Screens in `lib/features/*/presentation/`.
+- **Routing**: Register in `lib/router/app_router.dart`.
 
-## Phase 2: Preparation
-1. **Models**: Define needed Data Models in `data/models/`.
-2. **Repository**: Define interface in `domain/repositories/` and implement in `data/repositories/`.
-3. **Code Gen**: Run `flutter pub run build_runner build` to generate serialization code.
-
-## Phase 3: Implementation
-1. **State**: Create Riverpod providers in `presentation/providers/`.
-2. **UI**: Build Widgets and Screens in `presentation/widgets/` and `presentation/screens/`.
-3. **Router**: Update `app_router.dart` if new pages were added.
-
-## Phase 4: Quality Check
-1. **Analyze**: Run `flutter analyze` and fix all warnings/errors.
-2. **Build**: Run `flutter build web` or `flutter build apk` to ensure compilation success.
-3. **Theme**: Verify the UI looks good in both Dark and Light modes.
-
-## Phase 5: Delivery
-1. **Summarize**: Provide a concise summary of changes.
-2. **Artifacts**: Link to updated README or relevant documentation.
+## 3. Verify (Quality)
+- **Analyze**: `flutter analyze`.
+- **Test**: Ensure 401 handling works (if networking is involved).
+- **Theme**: Check Dark/Light mode compatibility.
